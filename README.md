@@ -1,1 +1,1 @@
-# ReactBooking.github.io
+# Demo page for project development
