@@ -45,7 +45,7 @@ class AppInitializer {
                     </Route>
                     <Redirect from="*" to="/" />
                 </Router>
-                , document.getElementById('app')
+                , document.getElementById('root')
             );
         });
     }

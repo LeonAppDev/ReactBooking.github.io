@@ -1,5 +1,5 @@
 import shared from './shared';
-import devServer from './devServer';
+import devServer from './devserver';
 import indexHtml from './indexHtml';
 
 export default {

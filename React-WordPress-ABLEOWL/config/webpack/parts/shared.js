@@ -41,10 +41,10 @@ function config() {
             use: {
               loader: 'file-loader',
               query: {
-                name: '[name].ext',
+                name: '[name].[ext]',
               },
             },
-          }
+          },
           {
             test: /\.css$/,
             exclude: /node_modules/,
@@ -59,9 +59,6 @@ function config() {
             use: [
               {
                 loader: 'babel-loader',
-                query: {
-                  plugins: ['transform-decorators-legacy'],
-                },
               },
             ],
           },
@@ -84,7 +81,7 @@ function config() {
           filename: 'vendor.bundle.js',
         }),
 
-        new webpack.NameModulesPlugin(),
+        new webpack.NamedModulesPlugin(),
       ],
       resolve: {
         extensions: [
@@ -96,7 +93,7 @@ function config() {
         ],
         modules: [
           'node_modules',
-          DIRC.src,
+          DIRS.src,
         ],
       },
       target: 'web',
