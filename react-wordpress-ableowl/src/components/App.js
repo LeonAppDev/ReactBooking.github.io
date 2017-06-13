@@ -1,18 +1,22 @@
-import React from 'react';
-import Nav from './Nav.js';
+import React, { PropTypes, Component } from 'react';
+import Nav from './Nav';
 
-export default class App extends React.Component {
+class App extends Component {
 
-    constructor(props) {
-        super(props);
+    static propTypes = {
+      children: PropTypes.node,
     }
-
+    static defaultProps = {
+      children: '',
+    }
     render() {
+      const { children } = this.props;
         return (
             <div className="wrapper">
                 <Nav />
-                {this.props.children}
+                {children}
             </div>
         );
     }
 }
+export default App;

@@ -1,22 +1,21 @@
-import React    from 'react';
-import { Link } from 'react-router';
-import _        from 'lodash';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import _ from 'lodash';
 
-import DataStore from './../stores/DataStore.js';
+import DataStore from 'stores/DataStore';
 
-class Nav extends React.Component {
-    render() {
-        let allPages = DataStore.getAllPages();
-        allPages = _.sortBy(allPages, [function(page) { return page.menu_order; }]);
-
-        return (
-            <header>
-                {allPages.map((page) => {
-                    return <Link key={page.id} to={`/${page.slug}`} style={{marginRight: '10px'}}>{page.title.rendered}</Link>
-                })}
-            </header>
-        );
-    }
+function Nav() {
+  let allPages = DataStore.getAllPages();
+  allPages = _.sortBy(allPages, [function(page) { return page.menu_order; }]);
+  return (
+    <header>
+      {
+        allPages.map(page =>
+          <Link key={page.id} to={`/${page.slug}`} style={{marginRight: '10px'}}>{page.title.rendered}</Link>
+        )
+      }
+    </header>
+  )
 }
 
 export default Nav;

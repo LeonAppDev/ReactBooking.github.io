@@ -1,8 +1,8 @@
-import React        from 'react';
-import {render}     from 'react-dom';
-import App          from './components/App.js';
-import Home         from './components/Home.js';
-import views        from './components/Views.js';
+import React from 'react';
+import {render} from 'react-dom';
+import App from 'components/App';
+import Home from 'components/Home';
+import views from 'components/Views';
 
 import {
   browserHistory,
@@ -10,9 +10,9 @@ import {
   Redirect,
   Route,
   Router
-} from 'react-router';
+} from 'react-router-dom';
 
-import DataActions  from './actions/DataActions.js';
+import DataActions  from 'actions/DataActions';
 
 
 class AppInitializer {
@@ -35,7 +35,7 @@ class AppInitializer {
     }
 
     run() {
-        DataActions.getPages((response)=>{
+        DataActions.getPages(response=>{
             render(
                 <Router history={browserHistory}>
                     <Route path="/" component={ App } >
