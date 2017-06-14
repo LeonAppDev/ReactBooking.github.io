@@ -10,7 +10,7 @@ import {
   Redirect,
   Route,
   Router
-} from 'react-router-dom';
+} from 'react-router';
 
 import DataActions  from 'actions/DataActions';
 

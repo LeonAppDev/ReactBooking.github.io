@@ -1,4 +1,4 @@
 export default {
-    home: './components/Home',
-    about: './components/About'
+    home: 'components/Home',
+    about: 'components/About'
 };
