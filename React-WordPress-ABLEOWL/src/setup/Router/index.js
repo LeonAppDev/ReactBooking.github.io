@@ -3,8 +3,10 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Layout from 'containers/Layout';
 import HomePage from 'containers/HomePage';
 import NotReadyPage from 'containers/NotReadyPage';
+import About from 'containers/About';
 
 export const routes = [
+  { path: '/pageId', component: About },
   { path: '/home', component: HomePage },
   { path: '*', component: NotReadyPage },
 ];

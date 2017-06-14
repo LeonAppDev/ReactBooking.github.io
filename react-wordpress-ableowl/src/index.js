@@ -35,6 +35,7 @@ class AppInitializer {
     }
 
     run() {
+      console.log('sdkfajlsdfja', DataActions.getPages);
         DataActions.getPages(response=>{
             render(
                 <Router history={browserHistory}>

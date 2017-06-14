@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } form 'react';
 import { Switch, Route } from 'react-router-dom';
 import Nav from 'component/Nav';
+import { routes } from 'setup/Router';
 
 class Layout extends Component {
   static propTypes = {
@@ -29,7 +30,7 @@ class Layout extends Component {
       <div>
         <Switch>
         {
-          
+          routes.map(route => <Route key={route.path} component={getNav} path={route.path}) />)
         }
         </Switch>
         {children}
