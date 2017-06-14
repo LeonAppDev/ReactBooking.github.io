@@ -6,7 +6,7 @@ import {
 
 import {
   loadPages,
-} from '.api';
+} from './api';
 
 import {
   setPages,

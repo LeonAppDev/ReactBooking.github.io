@@ -10,7 +10,7 @@ import {
   Redirect,
   Route,
   Router
-} from 'react-router-dom';
+} from 'react-router';
 
 import DataActions  from 'actions/DataActions';
 
@@ -35,7 +35,6 @@ class AppInitializer {
     }
 
     run() {
-      console.log('sdkfajlsdfja', DataActions.getPages);
         DataActions.getPages(response=>{
             render(
                 <Router history={browserHistory}>

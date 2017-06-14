@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import _ from 'lodash';
 // import { Map } from 'immutable';
 // import ImmutablePropTypes from 'react-immutable-proptypes';
@@ -45,6 +45,7 @@ import DataStore from 'stores/DataStore';
 function Nav() {
   let allPages = DataStore.getAllPages();
   allPages = _.sortBy(allPages, [function(page) { return page.menu_order; }]);
+  console.log('allPages', allPages);
   return (
     <header>
       {
