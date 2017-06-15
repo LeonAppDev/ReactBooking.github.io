@@ -16,6 +16,7 @@ import {
 function* asyncLoadPages() {
   const response = yield call(loadPages);
   yield put(setPages(response));
+  console.log('response', response);
 }
 
 export function* getPages() {

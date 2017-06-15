@@ -1,11 +1,13 @@
 import React, { PropTypes, Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Map } from 'immutable';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 import { getPages } from 'reducers/pagesEndPoint/actions';
+import { pagesInfoSelector } from 'reducers/pagesEndPoint/selectors';
 
 const mapStateToProps = state => ({
-  pages: pagesInforSelector(state),
+  pages: pagesInfoSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -28,11 +30,15 @@ export class TopNav extends Component {
 
   render() {
     const { pages } = this.props;
-    console.log('pages', pages);
     return (
-      <div>
-        <h1> testing </h1>
-      </div>
+      <header>
+        {
+          pages.map(page =>
+            <Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight: '10px'}}>{page.getIn(['title', 'rendered'])}</Link>
+          )
+        }
+      </header>
     );
   }
 }
+export default connect(mapStateToProps, mapDispatchToProps)(TopNav);
