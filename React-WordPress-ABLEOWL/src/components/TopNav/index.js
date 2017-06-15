@@ -4,28 +4,37 @@ import { Map } from 'immutable';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 import { getPages } from 'reducers/pagesEndPoint/actions';
+import { getPosts } from 'reducers/postsEndpoint/actions';
 import { pagesInfoSelector } from 'reducers/pagesEndPoint/selectors';
+import { postsInfoSelector } from 'reducers/postsEndpoint/selectors';
 
 const mapStateToProps = state => ({
   pages: pagesInfoSelector(state),
+  posts: postsInfoSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
+  getPosts: () => dispatch(getPosts()),
   getPages: () => dispatch(getPages()),
 });
 
 export class TopNav extends Component {
   static propTypes = {
     pages: ImmutablePropTypes.list,
+    posts: ImmutablePropTypes.list,
     getPages: PropTypes.func,
+    getPosts: PropTypes.func,
   };
   static defaultProps = {
     pages: Map(),
+    posts: Map(),
     getPages: () => {},
+    getPosts: () => {},
   };
 
   componentDidMount() {
     this.props.getPages();
+    this.props.getPosts();
   }
 
   render() {

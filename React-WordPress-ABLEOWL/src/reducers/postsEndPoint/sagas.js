@@ -1,25 +1,25 @@
 import { put, call, takeLatest } from 'redux-saga/effects';
 
 import {
-  LOAD_POSTS,
+  GET_POSTS,
 } from './constants';
 
 import {
   loadPosts,
-} from '.api';
+} from './api';
 
 import {
   setPosts,
-  currentPost,
 } from './actions';
 
 function* asyncLoadPosts() {
   const response = yield call(loadPosts);
-  yield put(setPages(response));
+  yield put(setPosts(response));
+  console.log('response', response);
 }
 
 export function* getPosts() {
-  yield takeLatest(LOAD_POSTS, asyncLoadPosts);
+  yield takeLatest(GET_POSTS, asyncLoadPosts);
 }
 
 export default [
