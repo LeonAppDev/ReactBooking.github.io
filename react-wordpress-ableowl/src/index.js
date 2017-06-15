@@ -1,54 +1,32 @@
 import React from 'react';
-import {render} from 'react-dom';
-import App from 'components/App';
-import Home from 'components/Home';
-import views from 'components/Views';
+import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import { fromJS } from 'immutable';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import { Provider } from 'react-redux';
+import configureStore from 'setup/store';
+import Router from 'setup/Router';
 
-import {
-  browserHistory,
-  IndexRoute,
-  Redirect,
-  Route,
-  Router
-} from 'react-router';
+injectTapEventPlugin();
+const initialState = fromJS({});
+const store = configureStore(initialState);
 
-import DataActions  from 'actions/DataActions';
-
-
-class AppInitializer {
-
-    buildRoutes(data) {
-        return data.pages.map((page, i) => {
-            const component = views[page.slug];
-            return (
-                <Route
-                    getComponent={(nextState, cb) => {
-                        require.ensure([], (require) => {
-                            cb(null, require(component).default);
-                        });
-                    }}
-                    key={ page.id }
-                    path={`/${page.slug}`}
-                />
-            );
-        });
-    }
-
-    run() {
-        DataActions.getPages(response=>{
-            render(
-                <Router history={browserHistory}>
-                    <Route path="/" component={ App } >
-                        <IndexRoute component={ Home } />
-
-                        {this.buildRoutes(response)}
-                    </Route>
-                    <Redirect from="*" to="/" />
-                </Router>
-                , document.getElementById('root')
-            );
-        });
-    }
+function renderApp(Component) {
+  render (
+    <AppContainer>
+      <Provider store={store}>
+        <Component />
+      </Provider>
+    </AppContainer>,
+    document.getElementById('root'),
+  );
 }
 
-new AppInitializer().run();
+renderApp(Router);
+
+if (module.hot) {
+  module.hot.accept('./setup/Router/index.js', () => {
+    const NewApp = require('./setup/Router/index.js').default;
+    renderApp(NewApp);
+  });
+}

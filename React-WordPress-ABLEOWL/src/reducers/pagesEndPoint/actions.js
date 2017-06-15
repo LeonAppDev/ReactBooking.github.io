@@ -1,12 +1,12 @@
 import { createAction } from 'redux-actions';
 import {
-  LOAD_PAGES,
+  GET_PAGES,
   SET_PAGES,
   CURRENT_PAGE,
 } from './constants';
 
-export const loadPages = createAction(
-  LOAD_PAGES,
+export const getPages = createAction(
+  GET_PAGES,
 );
 
 export const setPages = createAction(

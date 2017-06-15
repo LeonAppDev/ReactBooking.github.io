@@ -1,7 +1,7 @@
 import { put, call, takeLatest } from 'redux-saga/effects';
 
 import {
-  LOAD_PAGES,
+  GET_PAGES,
 } from './constants';
 
 import {
@@ -19,7 +19,7 @@ function* asyncLoadPages() {
 }
 
 export function* getPages() {
-  yield takeLatest(LOAD_PAGES, asyncLoadPages);
+  yield takeLatest(GET_PAGES, asyncLoadPages);
 }
 
 export default [
