@@ -9,6 +9,17 @@
   "scripts": {
     "start": "webpack-dev-server $NODE_DEBUG_OPTION --config config/webpack/webpack.config.js"
   },
+  "ava": {
+    "require": [
+      "babel-register",
+      "babel-polyfill",
+      "isomorphic-fetch",
+      "./config/ava_setup.js"
+    ],
+    "babel": {
+      "babelrc": true
+    }
+  },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
