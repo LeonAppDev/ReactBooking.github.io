@@ -1,7 +1,7 @@
 {
-  "name": "wp-api",
+  "name": "booking-form",
   "version": "1.0.0",
-  "description": "React project",
+  "description": "booking-form frontend",
   "main": "index.js",
   "repository": "https://github.com/LeonAppDev/LeonAppDev.github.io.git",
   "author": "Ismael Mori <gold.dev33@gmail.com>",
