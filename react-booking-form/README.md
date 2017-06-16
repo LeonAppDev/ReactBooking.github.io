@@ -5,6 +5,12 @@ This README would normally document whatever steps are necessary to get your app
 
 ### What is this repository for? ###
 
+* Quick Summary
+  This is a repository for booking-form
+
+* Version
+  1.0.0
+
 ### How do I get set up? ###
 
 * Summary of set up
@@ -25,10 +31,19 @@ This README would normally document whatever steps are necessary to get your app
 3. Connect to http://localhost:8080
 
 * Configuration
+  Nothing to configure at the moment.
 
 * How to run tests
   ```
   yarn test
   ```
 
-* Deployment instructions
+* How to run test:coverage
+  ```
+  yarn test:coverage
+  ```
+
+* How to run test:coverage && report
+  ```
+  yarn test:coverage && yarn test:coverage:report
+  ```
