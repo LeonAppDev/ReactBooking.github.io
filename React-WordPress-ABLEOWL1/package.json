@@ -7,7 +7,7 @@
   "author": "Ismael Mori <gold.dev33@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server $NODE_DEBUG_OPTION --config config/webpack/webpack.config.js"
+    "start": "webpack-dev-server --config config/webpack/webpack.config.js"
   },
   "ava": {
     "require": [
