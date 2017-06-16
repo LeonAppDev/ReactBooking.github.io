@@ -13,5 +13,6 @@ function Router() {
         <Route path="*" component={NotReadyPage} />
       </Switch>
     </BrowserRouter>
-  )
+  );
 }
+export default Router;

@@ -7,3 +7,4 @@ function NotReadyPage() {
     </div>
   );
 }
+export default NotReadyPage;

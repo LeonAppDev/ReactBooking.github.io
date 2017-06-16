@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function BookingFormPage() {
-  <div>
-  boooking form
-  </div>
+class BookingFormPage extends Component {
 
+  render() {
+    return (
+      <div>
+        boooking form
+      </div>
+    )
+  }
 }
+export default BookingFormPage;

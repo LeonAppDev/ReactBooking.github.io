@@ -44,6 +44,7 @@
     "currency-symbol-map": "^3.1.0",
     "html-webpack-plugin": "^2.28.0",
     "immutable": "^3.8.1",
+    "material-ui": "^0.18.3",
     "moment": "^2.17.1",
     "radium": "^0.19.1",
     "react": "^15.4.2",
