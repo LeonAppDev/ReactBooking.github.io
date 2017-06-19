@@ -14,11 +14,11 @@ const items1 = [
 ];
 
 const items2 = [
-  { id:4, label: "Room 1", value: <p>$159 &#9786; &#9786; 1K </p> },
-  { id:5, label: "Room 2", value: <p>$169 &#9786; &#9786; &#9786; 1Q+1S </p> },
-  { id:6, label: "Room 3", value: <p>$159 &#9786; &#9786; 1Q </p> },
-  { id:7, label: "Room 4", value: <p>$159 &#9786; &#9786; 1D </p> },
-  { id:8, label: "Room 5", value: <p>$159 &#9786; 1S </p> },
+  { id:1, label: "Room 1", value: <p>$159 &#9786; &#9786; 1K </p> },
+  { id:2, label: "Room 2", value: <p>$169 &#9786; &#9786; &#9786; 1Q+1S </p> },
+  { id:3, label: "Room 3", value: <p>$159 &#9786; &#9786; 1Q </p> },
+  { id:4, label: "Room 4", value: <p>$159 &#9786; &#9786; 1D </p> },
+  { id:5, label: "Room 5", value: <p>$159 &#9786; 1S </p> },
 ];
 
 const total = [
