@@ -54,6 +54,28 @@ function config() {
             ],
           },
           {
+            test: /(\.global\.css$|Timeline.css)/,
+            use: [
+              {
+                loader: 'style-loader',
+              },
+              {
+                loader: 'css-loader',
+              },
+            ],
+          },
+          {
+            test: /^((?!\.global|Timeline).)*\.css$/,
+            use: [
+              {
+                loader: 'style-loader',
+              },
+              {
+                loader: 'css-loader',
+              },
+            ],
+          },
+          {
             test: /\.js$/,
             exclude: /node_modules/,
             use: [
@@ -90,6 +112,7 @@ function config() {
           '.loader.js',
           '.js',
           '.react.js',
+          '.css',
         ],
         modules: [
           'node_modules',
