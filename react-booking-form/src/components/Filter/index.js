@@ -7,6 +7,7 @@ import LocationFilter from './LocationFilter';
 import colors from 'styles/colors';
 import styles from './styles';
 
+
 const Date = [
   { id: 1, label: <p>start date: </p>, setting: <DatePicker hintText="" textFieldStyle={styles.customDate} /> },
   { id: 2, label: <p>end date: </p>, setting: <DatePicker hintText="" textFieldStyle={styles.customDate} /> },
@@ -24,7 +25,7 @@ function Filter() {
           <div key={date.id} style={styles.date}>
             {date.label}
             {date.setting}
-          </div>
+          </div>,
         )
       }
       <div style={styles.applyContainer}>

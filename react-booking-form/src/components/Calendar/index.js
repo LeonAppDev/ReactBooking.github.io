@@ -3,6 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 
 import CalendarTimeline from './CalendarTimeline';
+import Test from './CalendarTimeline/caledar';
 import PropertyLists from './PropertyLists';
 import styles from './styles';
 import colors from 'styles/colors';
@@ -21,8 +22,11 @@ function Calendar() {
           <DatePicker hintText="" textFieldStyle={styles.customDate} />
         </div>
       </div>
-      <CalendarTimeline />
-      <PropertyLists />
+      <div style={styles.container}>
+        <PropertyLists />
+        <CalendarTimeline style={styles.calendarTimeline} />
+      </div>
+      <Test />
       <div>
         <RaisedButton
          label="Add to cart" labelStyle={styles.textStyles}

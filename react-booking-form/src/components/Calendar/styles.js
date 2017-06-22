@@ -15,4 +15,7 @@ export default {
     marginLeft: 20,
     width: 100,
   },
+  container: {
+    display: 'flex',
+  },
 };

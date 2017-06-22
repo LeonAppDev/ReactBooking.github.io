@@ -1,101 +1,45 @@
 import React from 'react';
-import Timeline from 'react-calendar-timeline'
-import moment from 'moment'
 
-const groups = [
-  { id: 1, title: 'group 1'},
-  { id: 2, title: 'group 2'},
-];
+import Header from './Header';
+import styles from './styles';
 
 const items = [
-  {
-    id: 1,
-    group: 1,
-    title: 'item 1',
-    start: moment().add(1, 'day').hours(0).minutes(0).seconds(0),
-    end: moment().add(4, 'day').hours(6).minutes(0).seconds(0)
-  },
-  {
-    id: 2,
-    group: 2,
-    title: 'item 2',
-    start: moment().add(-1, 'day').hours(0).minutes(0).seconds(0),
-    end: moment().add(1, 'day').hours(0).minutes(0).seconds(0)
-  },
-  {
-    id: 3,
-    group: 2,
-    title: 'item 3',
-    start: moment().add(2, 'day').hours(0).minutes(0).seconds(0),
-    end: moment().add(3, 'day').hours(0).minutes(0).seconds(0)
-  },
+  { id: 1, day: 'M', date: '22'},
+  { id: 2, day: 'T', date: '23'},
+  { id: 3, day: 'W', date: '24'},
+  { id: 4, day: 'T', date: '25'},
+  { id: 5, day: 'F', date: '26'},
+  { id: 6, day: 'S', date: '27'},
+  { id: 7, day: 'S', date: '28'},
+  { id: 8, day: 'M', date: '29'},
+  { id: 9, day: 'T', date: '30'},
+  { id: 10, day: 'W', date: '31'},
+  { id: 11, day: 'T', date: '1'},
+  { id: 12, day: 'F', date: '2'},
+  { id: 13, day: 'S', date: '3'},
+  { id: 14, day: 'S', date: '4'},
 ];
-
 function CalendarTimeline() {
-  const minTime = moment().add(-6, 'months').valueOf()
-  const maxTime = moment().add(6, 'moment').valueOf()
-  const props = {
-    groups: groups,
-    items: items,
-    fixedHeader: 'fixed',
-    canMove: true, // defaults
-    canResize: true,
-    itemsSorted: true,
-    itemTouchSendsClick: false,
-    stackItems: true,
-    itemHeightRatio: 0.75,
-    dragSnap: moment.duration(1, 'days').asMilliseconds(),
-
-    defaultTimeStart: moment().add(-7, 'day'),
-    defaultTimeEnd: moment().add(7, 'day'),
-
-    maxZoom: moment.duration(2, 'months').asMilliseconds(),
-    minZoom: moment.duration(3, 'days').asMilliseconds(),
-
-    keys: {
-      groupIdKey: 'id',
-      groupTitleKey: 'title',
-      itemIdKey: 'id',
-      itemTitleKey: 'title',
-      itemGroupKey: 'group',
-      itemTimeStartKey: 'start',
-      itemTimeEndKey: 'end'
-    },
-
-    onItemClick: function (item) {
-      console.log("Clicked: " + item);
-    },
-
-    onItemSelect: function (item) {
-      console.log("Selected: " + item);
-    },
-
-    onItemContextMenu: function (item) {
-      console.log("Context Menu: " + item);
-    },
-
-
-    // this limits the timeline to -6 months ... +6 months
-    onTimeChange: function (visibleTimeStart, visibleTimeEnd) {
-      if (visibleTimeStart < minTime && visibleTimeEnd > maxTime) {
-        this.updateScrollCanvas(minTime, maxTime)
-      } else if (visibleTimeStart < minTime) {
-        this.updateScrollCanvas(minTime, minTime + (visibleTimeEnd - visibleTimeStart))
-      } else if (visibleTimeEnd > maxTime) {
-        this.updateScrollCanvas(maxTime - (visibleTimeEnd - visibleTimeStart), maxTime)
-      } else {
-        this.updateScrollCanvas(visibleTimeStart, visibleTimeEnd)
-      }
-    }
-  }
   return (
-    <Timeline
-      groups={groups}
-      items={items}
-      defaultTimeStart={moment().add(-12, 'hour')}
-      defaultTimeEnd={moment().add(12, 'hour')}
-      props={props}
-    />
+    <div>
+      <div style={{display: 'flex', alignItems: 'center',}}>
+        <button style={styles.btn1}/>
+        <div style={{ width: '100%', display: 'flex', margin: '0 30px',}}>
+          {
+            items.map(item =>
+              <Header key={item.id} day={item.day} date={item.date} />,
+            )
+          }
+        </div>
+        <button style={styles.btn2}/>
+      </div>
+      <div style={{backgroundColor: 'blue', margin: 30,}}>
+       content1
+      </div>
+      <div style={{backgroundColor: 'blue', margin: 30,}}>
+       content2
+      </div>
+    </div>
   );
 }
 

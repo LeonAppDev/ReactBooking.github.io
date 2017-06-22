@@ -27,7 +27,7 @@ const total = [
 ];
 function PropertyLists() {
   return (
-    <div>
+    <div style={{flex: 1,}}>
       <div style={styles.block}>
         <Checkbox
           label="English Garden Manor"
