@@ -24,12 +24,14 @@ export class TopNav extends Component {
     posts: ImmutablePropTypes.list,
     getPages: PropTypes.func,
     getPosts: PropTypes.func,
+    imageSrc: PropTypes.string,
   };
   static defaultProps = {
     pages: Map(),
     posts: Map(),
     getPages: () => {},
     getPosts: () => {},
+    imageSrc:'',
   };
 
   componentDidMount() {
@@ -37,17 +39,86 @@ export class TopNav extends Component {
     this.props.getPosts();
   }
 
+ constructor(props)
+ {
+    super(props);
+
+    this.state = {focus:null};
+
+
+ }
+
+handleClick(id)
+{
+   this.setState({focus:id});
+
+}
+
   render() {
     const { pages } = this.props;
-    return (
+
+    const navClass = ['navbar ','navbar-default ','navbar-fixed-top ','header-bg'].join('');
+    const container = 'container-fluid';
+    const navHeader = 'navbar-header';
+    const navButton = ['navbar-toggle ','collapsed'].join('');
+    const navMain='nav-main';
+    const navList = ['navbar-collapse ','collapse'].join('');
+      const ulNav = ['nav ','navbar-nav'].join('');
+      const logoStyle = 'navbar-brand';
+      const logoNavi = 'www.ableowl.com';
+    var spanGroup=[];
+
+         for (let i=0;i<4;i++)
+         {
+           let spanClass = '';
+           if(i==0)
+           {
+           spanClass='sr-only';
+           spanGroup.push(<span className={spanClass}>{'Toggle navigation'}</span>);
+         }
+         else
+         {
+           spanClass='icon-bar';
+           spanGroup.push(<span className={spanClass}></span>);
+         }
+       }
+
+      return(
       <header>
-        {
-          pages.map(page =>
-            <Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight: '10px'}}>{page.getIn(['title', 'rendered'])}</Link>
-          )
-        }
+      <nav className={navClass}>
+      <div className={container}>
+      <div className={navHeader}>
+      <button className={navButton}>
+      {spanGroup}
+      </button>
+      <a className={logoStyle}>
+      <img src={this.props.imageSrc}/>
+      </a>
+      </div>
+      <div className={navMain}>
+      <div className={navList}>
+      <ul className={ulNav}>
+      {
+
+        pages.map(page =>{
+
+          let style='';
+          if(this.state.focus==page.get('id'))
+          {
+            style='focused';
+          }
+
+       return <li><Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight:'10px'}} className={style} onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link></li>;
+        })
+      }
+      </ul>
+      </div>
+      </div>
+      </div>
+      </nav>
       </header>
-    );
-  }
+);
+     }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(TopNav);
