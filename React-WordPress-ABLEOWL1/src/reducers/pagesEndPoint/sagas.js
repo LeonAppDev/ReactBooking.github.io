@@ -13,7 +13,7 @@ import {
 } from './actions';
 
 function* asyncLoadPages() {
-  //const response = yield call(loadPages);
+//const response = yield call(loadPages);
   const response = [{ "id": 3133,
         "slug": "casestudies",
         "status": "publish",

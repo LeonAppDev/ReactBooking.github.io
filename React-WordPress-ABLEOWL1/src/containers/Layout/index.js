@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import TopNav from 'components/TopNav';
 import { routes } from 'setup/Router';
+import FooterNav from 'components/FooterNav';
 
 class Layout extends Component {
   static propTypes = {
@@ -23,6 +24,11 @@ class Layout extends Component {
             }
             </Switch>
             {children}
+       <Switch>
+           {
+             routes.map(route=><Route key={route.path} component={FooterNav} path={route.path} />)
+           }
+           </Switch>
           </div>
       );
   }

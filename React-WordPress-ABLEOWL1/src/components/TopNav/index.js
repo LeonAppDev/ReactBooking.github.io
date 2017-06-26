@@ -31,7 +31,7 @@ export class TopNav extends Component {
     posts: Map(),
     getPages: () => {},
     getPosts: () => {},
-    imageSrc:'',
+    imageSrc:'./wp-content/themes/react-wordpress-ableowl/image/Logo.svg',
   };
 
   componentDidMount() {
