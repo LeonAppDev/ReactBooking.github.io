@@ -7,6 +7,7 @@ import { getPages } from 'reducers/pagesEndPoint/actions';
 import { getPosts } from 'reducers/postsEndpoint/actions';
 import { pagesInfoSelector } from 'reducers/pagesEndPoint/selectors';
 import { postsInfoSelector } from 'reducers/postsEndpoint/selectors';
+import styleTopNav from './style';
 
 const mapStateToProps = state => ({
   pages: pagesInfoSelector(state),
@@ -17,6 +18,8 @@ const mapDispatchToProps = dispatch => ({
   getPosts: () => dispatch(getPosts()),
   getPages: () => dispatch(getPages()),
 });
+
+
 
 export class TopNav extends Component {
   static propTypes = {
@@ -55,49 +58,11 @@ handleClick(id)
 }
 
   render() {
-    const { pages } = this.props;
-
-    const navClass = ['navbar ','navbar-default ','navbar-fixed-top ','header-bg'].join('');
-    const container = 'container-fluid';
-    const navHeader = 'navbar-header';
-    const navButton = ['navbar-toggle ','collapsed'].join('');
-    const navMain='nav-main';
-    const navList = ['navbar-collapse ','collapse'].join('');
-      const ulNav = ['nav ','navbar-nav'].join('');
-      const logoStyle = 'navbar-brand';
-      const logoNavi = 'www.ableowl.com';
-    var spanGroup=[];
-
-         for (let i=0;i<4;i++)
-         {
-           let spanClass = '';
-           if(i==0)
-           {
-           spanClass='sr-only';
-           spanGroup.push(<span className={spanClass}>{'Toggle navigation'}</span>);
-         }
-         else
-         {
-           spanClass='icon-bar';
-           spanGroup.push(<span className={spanClass}></span>);
-         }
-       }
+    const { pages,imageSrc} = this.props;
 
       return(
       <header>
-      <nav className={navClass}>
-      <div className={container}>
-      <div className={navHeader}>
-      <button className={navButton}>
-      {spanGroup}
-      </button>
-      <a className={logoStyle}>
-      <img src={this.props.imageSrc}/>
-      </a>
-      </div>
-      <div className={navMain}>
-      <div className={navList}>
-      <ul className={ulNav}>
+      <styleTopNav imageSrc={imageSrc}>
       {
 
         pages.map(page =>{
@@ -107,15 +72,10 @@ handleClick(id)
           {
             style='focused';
           }
-
        return <li><Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight:'10px'}} className={style} onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link></li>;
         })
       }
-      </ul>
-      </div>
-      </div>
-      </div>
-      </nav>
+      </styleTopNav>
       </header>
 );
      }
