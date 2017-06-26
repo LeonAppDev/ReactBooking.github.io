@@ -3,42 +3,70 @@ import Checkbox from 'material-ui/Checkbox';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 
+import { currentEndDateSelector, currentStartDateSelector } from 'reducers/form/selectors';
+import { handleGetEndDate, handleGetStartDate } from 'reducers/form/actions';
 import LocationFilter from './LocationFilter';
 import colors from 'styles/colors';
 import styles from './styles';
 
+const mapStateToProps state => ({
+  currentStartDate: currentStartDateSelector(state),
+  currentEndDate: currentEndDateSelector(state),
+});
+const mapDispatchToProps = dispatch => ({
+  handleGetEndDate: maxDate => dispatch(handleGetEndDate(maxDate)),
+  handleGetStartDate: minDate => dispatch(handleGetStartDate(minDate)),
+});
+
 class Filter extends Component {
+
+  static propTypes = {
+    handleGetEndDate: PropTypes.func,
+    handleGetStartDate: PropTypes.func,
+  };
+
+  static defaultProps = {
+    handleGetEndDate: () => {},
+    handleGetStartDate: () => {},
+  };
+
   constructor(props) {
     super(props);
 
-    const startDate = new Date();
-    const endDate = new Date();
-    startDate.setDate(startDate.getDate());
-    startDate.setHours(0,0,0,0);
-    endDate.setDate(endDate.getDate() + 14);
-    endDate.setHours(0,0,0,0);
+    const minDate = new Date();
+    const maxDate = new Date();
+    minDate.setDate(minDate.getDate());
+    minDate.setHours(0,0,0,0);
+    maxDate.setDate(maxDate.getDate() + 14);
+    maxDate.setHours(0,0,0,0);
     this.state = {
-      startDate: startDate,
-      endDate: endDate,
+      minDate: minDate,
+      maxDate: maxDate,
     };
   }
-  handleChangeStartDate = (event, date) => {
+
+  componentDidMount() {
+    this.props.handleGetStartDate(this.state.minDate);
+    this.props.handleGetEndDate(this.state.maxDate);
+  }
+  handleChangeMinDate = (event, date) => {
     this.setState({
-      startDate: date,
+      minDate: date,
     });
   };
-  handleChangeEndDate = (event, date) => {
+  handleChangeMaxDate = (event, date) => {
     this.setState({
-      endDate: date,
+      maxDate: date,
     });
   };
 
   render() {
     const Date = [
-      { id: 1, label: <p>start date: </p>, setting: <DatePicker hintText="" defaultDate={this.state.startDate} onChange={this.handleChangeStartDate} textFieldStyle={styles.customDate} /> },
-      { id: 2, label: <p>end date: </p>, setting: <DatePicker hintText="" defaultDate={this.state.endDate} onChange={this.handleChangeEndDate} textFieldStyle={styles.customDate} /> },
+      { id: 1, label: <p>start date: </p>, setting: <DatePicker hintText="" defaultDate={this.state.minDate} onChange={this.handleChangeMinDate} textFieldStyle={styles.customDate} /> },
+      { id: 2, label: <p>end date: </p>, setting: <DatePicker hintText="" defaultDate={this.state.maxDate} onChange={this.handleChangeMaxDate} textFieldStyle={styles.customDate} /> },
       { id: 3, label: <p>Locations: </p>, setting: <LocationFilter /> },
     ];
+    console.log('startDate', this.state.minDate);
     return (
       <div>
         <div style={{display: 'flex'}}>
@@ -70,4 +98,4 @@ class Filter extends Component {
   }
 }
 
-export default Filter;
+export default connect(mapDispatchToProps, mapStateToProps)(Filter);
