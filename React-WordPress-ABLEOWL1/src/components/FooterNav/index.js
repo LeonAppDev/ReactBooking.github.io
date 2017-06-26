@@ -1,9 +1,9 @@
-import React,{PropTypes,Component} from 'react';
+import React from 'react';
 
-
-
-function FooterNav(){
-    return(<div>Hello world</div>);
+function FooterNav() {
+    return (
+      <div>This is Footer component</div>
+    );
 }
 
 export default FooterNav

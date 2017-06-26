@@ -7,7 +7,7 @@ import { getPages } from 'reducers/pagesEndPoint/actions';
 import { getPosts } from 'reducers/postsEndpoint/actions';
 import { pagesInfoSelector } from 'reducers/pagesEndPoint/selectors';
 import { postsInfoSelector } from 'reducers/postsEndpoint/selectors';
-import styleTopNav from './style';
+// import styleTopNav from './style';
 
 const mapStateToProps = state => ({
   pages: pagesInfoSelector(state),
@@ -27,14 +27,14 @@ export class TopNav extends Component {
     posts: ImmutablePropTypes.list,
     getPages: PropTypes.func,
     getPosts: PropTypes.func,
-    imageSrc: PropTypes.string,
+    // imageSrc: PropTypes.string,
   };
   static defaultProps = {
     pages: Map(),
     posts: Map(),
     getPages: () => {},
     getPosts: () => {},
-    imageSrc:'./wp-content/themes/react-wordpress-ableowl/image/Logo.svg',
+    // imageSrc:'./wp-content/themes/react-wordpress-ableowl/image/Logo.svg',
   };
 
   componentDidMount() {
@@ -46,39 +46,31 @@ export class TopNav extends Component {
  {
     super(props);
 
-    this.state = {focus:null};
+    // this.state = {focus:null};
 
 
  }
 
 handleClick(id)
 {
-   this.setState({focus:id});
+  //  this.setState({focus:id});
 
 }
 
   render() {
-    const { pages,imageSrc} = this.props;
+    const { pages } = this.props;
 
-      return(
-      <header>
-      <styleTopNav imageSrc={imageSrc}>
-      {
-
-        pages.map(page =>{
-
-          let style='';
-          if(this.state.focus==page.get('id'))
+      return (
+        <header>
           {
-            style='focused';
+
+            pages.map(page =>
+              <Link key={page.get('id')} to={`/${page.get('slug')}`} onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link>
+            )
           }
-       return <li><Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight:'10px'}} className={style} onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link></li>;
-        })
-      }
-      </styleTopNav>
-      </header>
-);
-     }
+        </header>
+      );
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopNav);

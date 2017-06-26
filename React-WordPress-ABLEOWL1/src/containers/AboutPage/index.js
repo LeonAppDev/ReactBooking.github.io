@@ -5,5 +5,5 @@ function AboutPage() {
     <div>
       <h1>This page is About page</h1>
     </div>
-  )
+  );
 }
