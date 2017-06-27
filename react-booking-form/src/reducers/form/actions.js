@@ -4,7 +4,7 @@ import {
   SET_STAET_DATE,
   GET_END_DATE,
   SET_END_DATE,
-} from 'constants';
+} from './constants';
 
 export const handleSetStartDate = createAction(
   SET_STAET_DATE,

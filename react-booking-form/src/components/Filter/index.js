@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import Checkbox from 'material-ui/Checkbox';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
@@ -9,7 +9,7 @@ import LocationFilter from './LocationFilter';
 import colors from 'styles/colors';
 import styles from './styles';
 
-const mapStateToProps state => ({
+const mapStateToProps = state => ({
   currentStartDate: currentStartDateSelector(state),
   currentEndDate: currentEndDateSelector(state),
 });
