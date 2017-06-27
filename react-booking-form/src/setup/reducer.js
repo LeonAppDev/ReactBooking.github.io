@@ -1,8 +1,8 @@
-import { combinReducers } from 'redux-immutable';
+import { combineReducers } from 'redux-immutable';
 import formReducer from 'reducers/form/reducer';
 
 export default function createReducer() {
-  return combinReducers({
+  return combineReducers({
     form: formReducer,
   });
 }
