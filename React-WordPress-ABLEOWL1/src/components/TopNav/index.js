@@ -7,26 +7,19 @@ import { getPages } from 'reducers/pagesEndPoint/actions';
 import { getPosts } from 'reducers/postsEndpoint/actions';
 import { pagesInfoSelector } from 'reducers/pagesEndPoint/selectors';
 import { postsInfoSelector } from 'reducers/postsEndpoint/selectors';
-// import styleTopNav from './style';
-import Sample from './Sample';
+import StyleNav from './StyleNav';
+
 
 const mapStateToProps = state => ({
   pages: pagesInfoSelector(state),
   posts: postsInfoSelector(state),
 });
 
+
 const mapDispatchToProps = dispatch => ({
   getPosts: () => dispatch(getPosts()),
   getPages: () => dispatch(getPages()),
 });
-
-function Sample1() {
-  return (
-    <div>
-      <h1> this is sample1 component </h1>
-    </div>
-  );
-}
 
 export class TopNav extends Component {
   static propTypes = {
@@ -65,21 +58,25 @@ handleClick(id)
 }
 
   render() {
-    const { pages } = this.props;
+    const { pages,imageSrc} = this.props;
+    var MenuGroup = [];
 
-      return (
-        <header>
-          <Sample />  /////// used another component ////////////
-          {
 
-            pages.map(page =>
-              <Link key={page.get('id')} to={`/${page.get('slug')}`} onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link>
-            )
-          }
-          <Sample1 />
-        </header>
-      );
-  }
+
+      return(
+      <header>
+      {
+        pages.map(page =>{
+
+         return <li> <Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight:'10px'}}  onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link></li>;
+       })
+      
+      }
+
+      </header>
+);
+     }
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopNav);
