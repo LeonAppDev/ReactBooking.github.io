@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Map } from 'immutable';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
@@ -7,8 +6,13 @@ import { getPages } from 'reducers/pagesEndPoint/actions';
 import { getPosts } from 'reducers/postsEndpoint/actions';
 import { pagesInfoSelector } from 'reducers/pagesEndPoint/selectors';
 import { postsInfoSelector } from 'reducers/postsEndpoint/selectors';
+<<<<<<< Updated upstream
 import StyleNav from './StyleNav';
 
+=======
+// import styleTopNav from './style';
+import MenuItems from './MenuItems';
+>>>>>>> Stashed changes
 
 const mapStateToProps = state => ({
   pages: pagesInfoSelector(state),
@@ -58,6 +62,7 @@ handleClick(id)
 }
 
   render() {
+<<<<<<< Updated upstream
     const { pages,imageSrc} = this.props;
     var MenuGroup = [];
 
@@ -76,6 +81,21 @@ handleClick(id)
       </header>
 );
      }
+=======
+    const { pages } = this.props;
+
+      return (
+        <header>
+          {
+
+            pages.map(page =>
+              <MenuItems key={page.get('id')} to={`/${page.get('slug')}`} onTouchTap={()=>this.handleClick(page.get('id'))} content={page.getIn(['title','rendered'])} />,
+            )
+          }
+        </header>
+      );
+  }
+>>>>>>> Stashed changes
 }
 
 
