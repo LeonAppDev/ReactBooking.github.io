@@ -25,19 +25,11 @@ class Layout extends Component {
               }
             </Switch>
             {children}
-<<<<<<< HEAD
         {/*<Switch>
            {
              routes.map(route=><Route key={route.path} component={FooterNav} path={route.path} />)
            }
            </Switch>*/}
-=======
-            <Switch>
-             {
-               routes.map(route => <Route key={route.path} component={FooterNav} path={route.path} />)
-             }
-           </Switch>
->>>>>>> 0f2fedb26fd37953641f6882f5a20c321d40cedb
           </div>
       );
   }

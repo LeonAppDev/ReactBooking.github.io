@@ -6,4 +6,4 @@ function FooterNav() {
     );
 }
 
-export default FooterNav
+export default FooterNav;
