@@ -7,7 +7,11 @@ import { getPages } from 'reducers/pagesEndPoint/actions';
 import { getPosts } from 'reducers/postsEndpoint/actions';
 import { pagesInfoSelector } from 'reducers/pagesEndPoint/selectors';
 import { postsInfoSelector } from 'reducers/postsEndpoint/selectors';
+<<<<<<< HEAD
 
+=======
+// import styleTopNav from './style';
+>>>>>>> 0f2fedb26fd37953641f6882f5a20c321d40cedb
 
 const mapStateToProps = state => ({
   pages: pagesInfoSelector(state),
@@ -25,14 +29,14 @@ export class TopNav extends Component {
     posts: ImmutablePropTypes.list,
     getPages: PropTypes.func,
     getPosts: PropTypes.func,
-    imageSrc: PropTypes.string,
+    // imageSrc: PropTypes.string,
   };
   static defaultProps = {
     pages: Map(),
     posts: Map(),
     getPages: () => {},
     getPosts: () => {},
-    imageSrc:'./wp-content/themes/react-wordpress-ableowl/image/Logo.svg',
+    // imageSrc:'./wp-content/themes/react-wordpress-ableowl/image/Logo.svg',
   };
 
   componentDidMount() {
@@ -44,18 +48,19 @@ export class TopNav extends Component {
  {
     super(props);
 
-    this.state = {focus:null};
+    // this.state = {focus:null};
 
 
  }
 
 handleClick(id)
 {
-   this.setState({focus:id});
+  //  this.setState({focus:id});
 
 }
 
   render() {
+<<<<<<< HEAD
     const { pages,imageSrc} = this.props;
      const styleNav = (<div>test</div>);
       return(
@@ -66,15 +71,30 @@ handleClick(id)
 
           let style='';
           if(this.state.focus==page.get('id'))
+=======
+    const { pages } = this.props;
+
+      return (
+        <header>
+>>>>>>> 0f2fedb26fd37953641f6882f5a20c321d40cedb
           {
-            style='focused';
+
+            pages.map(page =>
+              <Link key={page.get('id')} to={`/${page.get('slug')}`} onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link>
+            )
           }
+<<<<<<< HEAD
          return <li>{styleNav}<Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight:'10px'}} className={style} onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link></li>;
         })
       }
       </header>
 );
      }
+=======
+        </header>
+      );
+  }
+>>>>>>> 0f2fedb26fd37953641f6882f5a20c321d40cedb
 }
 
 
