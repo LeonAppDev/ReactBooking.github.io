@@ -10,16 +10,15 @@ a:hover, a:focus {
 }
 .header-bg {
 	background-color: #fff;
-	border-bottom: 1px solid #cccccc !important;
-	height: 100px;
+	border-top: 2px solid #d03135;
+	height: 90px;
 	margin-bottom: 0;
-	padding:0 30px 0 30px;
 }
 .navbar-brand {
 	padding: 9px;
 }
 .navbar-brand img {
-  width: 25%;
+  width: 50%;
 }
 .nav-main {
 	text-align: right;
@@ -27,7 +26,7 @@ a:hover, a:focus {
 
 .nav.navbar-nav a {
   color: #000 !important;
-  font-size: 20px;
+  font-size: 13px;
   text-transform: uppercase;
 }
 
@@ -38,6 +37,46 @@ a:hover, a:focus {
 .nav.navbar-nav a:hover {
   border-bottom: 1px solid #0f46a8;
 }
+
+#content-wrapper{ min-height:450px;}
+
+/*********Footer CSS ************/
+
+.footer-top {
+  background: #0d141b none repeat scroll 0 0;
+  padding: 30px 0 0  0;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-navigation li {
+  float: left;
+  list-style: outside none none;
+  margin: 0 10px;
+}
+
+.footer-navigation a {
+  color: #99c1da;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.footer-bottom {
+  background: #000000 none repeat scroll 0 0;
+  color: #99c1da;
+  font-size: 13px;
+  padding: 20px 0;
+  text-align: center;
+}
+.footer-navigation ul {
+  display: inline-block;
+  padding: 15px 0 0 0;
+}
+
+.footer-bottom a {
+  color: #5c84b4;
+}
+
 
 /*********Responsive css************/
 @media screen and (min-width:220px) and (max-width:767px){
@@ -81,7 +120,6 @@ body {
 }
 .navbar-default .navbar-nav > li > a {
   padding: 10px;
-	font-size: 20px !important;
 }
 .nav.navbar-nav a:after {
   display: none;
@@ -98,7 +136,7 @@ body {
 }
 
 @media screen and (min-width:768px) and (max-width:1024px){
-
+	
 .navbar-brand img {
   width: 80%;
 }
@@ -108,10 +146,19 @@ body {
 }
 .nav.navbar-nav a::after {
   margin-left: 10px;
-}
+}	
 .navbar-default .navbar-nav > li > a {
   font-size: 13px;
   padding: 10px 14px;
 }
 
 }
+
+
+
+
+
+
+
+
+

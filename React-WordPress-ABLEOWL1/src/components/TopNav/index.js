@@ -7,7 +7,8 @@ import { getPages } from 'reducers/pagesEndPoint/actions';
 import { getPosts } from 'reducers/postsEndpoint/actions';
 import { pagesInfoSelector } from 'reducers/pagesEndPoint/selectors';
 import { postsInfoSelector } from 'reducers/postsEndpoint/selectors';
-import StyleNav from './StyleNav';
+import style from './style';
+import HeaderLogo from './HeaderLogo';
 
 
 const mapStateToProps = state => ({
@@ -20,6 +21,15 @@ const mapDispatchToProps = dispatch => ({
   getPosts: () => dispatch(getPosts()),
   getPages: () => dispatch(getPages()),
 });
+
+function MenuItems({pages}){
+
+return (<div className={style.navMain}><div className={style.navList}><ul className={style.ulNav}>
+        {pages.map(page=>(<li><Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight:'10px'}}  onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link></li>))}
+        </ul></div></div>);
+
+}
+
 
 export class TopNav extends Component {
   static propTypes = {
@@ -59,20 +69,19 @@ handleClick(id)
 
   render() {
     const { pages,imageSrc} = this.props;
-    var MenuGroup = [];
-
-
 
       return(
       <header>
-      {
-        pages.map(page =>{
-
-         return <li> <Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight:'10px'}}  onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link></li>;
-       })
-      
-      }
-
+     <nav className={style.navClass}>
+       <div className={style.container}>
+       <HeaderLogo/>
+     {
+       <div className={style.navMain}><div className={style.navList}><ul className={style.ulNav}>
+               {pages.map(page=>(<li><Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight:'10px'}}  onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link></li>))}
+               </ul></div></div>
+     }
+     </div>
+     </nav>
       </header>
 );
      }
