@@ -1,10 +1,16 @@
 import React from 'react';
+import style from './style';
 
 function HomePage() {
+  const content=(
+    <div className={style.hireUs}>
+    Hire a specialist Excel company
+    </div>
+  );
   return (
-      <div>
-          <h1>Hello World</h1>
-      </div>
+    <section id={style.contentWrap}>
+    {content}
+    </section>
   );
 }
 

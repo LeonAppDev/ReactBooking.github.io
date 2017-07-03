@@ -22,13 +22,7 @@ const mapDispatchToProps = dispatch => ({
   getPages: () => dispatch(getPages()),
 });
 
-function MenuItems({pages}){
 
-return (<div className={style.navMain}><div className={style.navList}><ul className={style.ulNav}>
-        {pages.map(page=>(<li><Link key={page.get('id')} to={`/${page.get('slug')}`} style={{marginRight:'10px'}}  onClick={()=>this.handleClick(page.get('id'))} >{page.getIn(['title','rendered'])}</Link></li>))}
-        </ul></div></div>);
-
-}
 
 
 export class TopNav extends Component {

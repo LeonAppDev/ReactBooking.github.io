@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './style';
 
+
 function HeaderLogo(){
 
   var spanGroup=[];
@@ -21,12 +22,12 @@ function HeaderLogo(){
       }
 
   return (
-      <div class={style.navHeader}>
-      <button class={style.navButton}>
+      <div className={style.navHeader}>
+      <button className={style.navButton}>
       {spanGroup}
       </button>
       <a className={style.logoStyle}>
-      <img src={style.logoUrl} alt={style.logoAlt}/>
+
       </a>
       </div>
   );
