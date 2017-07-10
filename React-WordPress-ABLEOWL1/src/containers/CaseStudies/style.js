@@ -15,6 +15,8 @@ const style={
   chcekBox:'checkbox',
   subBtn:'sub-btn',
   canBtn:'cancel-btn',
+  greyHire:['grey-section','hire-heading'].join(" "),
+  testimonial:'testimonial',
 
 };
 

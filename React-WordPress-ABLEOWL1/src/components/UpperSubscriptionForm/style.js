@@ -12,10 +12,10 @@ const style={
   excelImg:'excel-img',
   formGroup:'form-group',
   formControl:'form-control',
-  chcekBox:'checkbox',
+  checkBox:'checkbox',
   subBtn:'sub-btn',
   canBtn:'cancel-btn',
-
+  form:'form',
 };
 
 export default style;

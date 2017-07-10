@@ -23,11 +23,11 @@ function HeaderLogo(){
 
   return (
       <div className={style.navHeader}>
-      <button className={style.navButton}>
+      <button aria-controls="navbar" aria-expanded="false" className={style.navButton} data-target="#navbar" data-toggle="collapse" type="button">
       {spanGroup}
       </button>
       <a className={style.logoStyle}>
-
+     <img src={style.logoUrl} alt={style.logAlt}/>
       </a>
       </div>
   );

@@ -1,9 +1,10 @@
 body {
 	/* background: #F3F3F3; */
-	font-size: 16px!important;
-	font-family: 'Open Sans', sans-serif!important;
-	padding-top: 130px!important;
+	font-family: "Open Sans",sans-serif !important;
+  font-size: 16px !important;
+  padding-top: 130px !important;
 }
+
 a:hover, a:focus {
 	text-decoration: none;
 	outline-offset: 0;
@@ -63,10 +64,10 @@ a:hover, a:focus {
   width: 6%;
 }
 .footer-top {
-  background: #0d141b none repeat scroll 0 0;
-  padding: 50px 0 20px;
-  text-align: center;
-  width: 100%;
+	background: #0d141b none repeat scroll 0 0;
+	padding: 30px 0 0 0;
+	text-align: center;
+	width: 100%;
 }
 .footer-navigation li {
 	float: left;
@@ -246,172 +247,6 @@ a:hover, a:focus {
 }
 
 
-/*-----------------Journal page-----------------*/
-
-.journal {
-  margin: 0 auto;
-  width: 70%;
-}
-
-.journal h1 {
-  color: #95b3d7;
-  font-size: 42px;
-  letter-spacing: 4px;
-  line-height: 45px;
-  margin-bottom: 35px;
-}
-
-ul.hire-heading {
-  padding: 0;
-}
-.journal .hire-heading > li {
-  font-size: 13px;
-}
-
-.sample-img > img {
-  width: 100%;
-}
-.sample-img {
-  display: inline-block;
-  margin: 15px 0;
-}
-.sample-btn {
-  background: #9aafd3 none repeat scroll 0 0;
-  border: medium none;
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: 3px;
-  margin: 25px 0;
-  padding: 14px 24px;
-  text-transform: uppercase;
-}
-.journal .form input[type="text"], .journal .form input[type="email"], .journal .form select {
-  border: 1px solid #9aafd3;
-  border-radius: 0;
-  height: 42px;
-  width: 100%;
-  padding: 2px 10px;
-}
-.journal .form-control::placeholder, .journal .form select {
-  color: #333;
-  font-size: 13px;
-}
-.journal label {
-  font-size: 13px;
-}
-.journal .checkbox input {
-  right: 0;
-  width: 4%;
-}
-.journal .sub-btn {
-  background: #9aafd3 none repeat scroll 0 0;
-  border: medium none;
-  color: #fff;
-  letter-spacing: 2px;
-  padding: 14px 25px;
-}
-.journal .cancel-btn {
-  background: #b1b8c5;
-  border: medium none;
-  color: #fff;
-  float: right;
-  letter-spacing: 2px;
-  padding: 14px 25px;
-}
-.journal-video > h2 {
-  font-size: 22px;
-  text-transform: uppercase;
-  margin-top: 30px;
-}
-.journal-video > img {
-  width: 100%;
-}
-.img-owl {
-  width: 100%;
-}
-.testi {
-  display: inline-block;
-  margin: 15px 0;
-}
-.testi > p {
-  font-size: 14px;
-  line-height: 26px;
-}
-.testi > span {
-  font-size: 13px;
-  text-transform: uppercase;
-}
-.client-section {
-  margin: 40px auto;
-  text-align: center;
-  width: 75%;
-}
-.client-section h3 {
-  font-size: 20px;
-  text-transform: uppercase;
-}
-
-/*-----------------Contact page-----------------*/
-
-.contact {
-  padding-bottom: 60px;
-}
-
-#exampleInputphone1 {
-  float: left;
-  margin-bottom: 15px;
-  margin-right: 20px;
-  width: 60%;
-}
-
-.call_check {
-  font-size: 13px;
-  font-weight: normal;
-  margin-top: 10px;
-}
-textarea {
-  font-size: 13px;
-  height: 150px;
-  margin-top: 17px;
-}
-.address {
-  padding: 0;
-}
-.address > li {
-  list-style: outside none none;
-  margin-bottom: 15px;
-}
-.icon {
-  float: left;
-  margin-right: 15px;
-  width: 28px;
-}
-.address span {
-  display: table;
-  letter-spacing: 1px;
-  line-height: 30px;
-}
-address {
-  display: flex;
-  margin-bottom: 5px;
-}
-
-
-/*********TheProcess page Leon************/
-.process {
-  margin: 0 auto;
-  width: 40%;
-}
-
-.process h1 {
-  color: #95b3d7;
-  font-size: 37px;
-  letter-spacing: 4px;
-  line-height: 45px;
-  margin-bottom: 35px;
-	display:block;
-}
-
 /*********Responsive css************/
 
 @media screen and (min-width:220px) and (max-width:767px) {
@@ -458,45 +293,7 @@ address {
 	.nav.navbar-nav a:after {
 		display: none;
 	}
-	.nav.navbar-nav a {
-	  font-size: 15px;
-	}
-	.nav-main {
-	  margin-top: 35px;
-	}
-	.client-section img {
-	  width: 78%;
-	}
-	.hire-heading h2, .testimonial h2 {
-	  font-size: 28px;
-	}
-	.journal h1 {
-	  font-size: 29px;
-	  letter-spacing: 1px;
-	  line-height:35px;
-	}
-	.journal {
-	  width: 90%;
-	}
-	.journal button {
-	  margin-bottom: 10px;
-	  margin-left: 0;
-	}
-	.main_sec {
-	  width: 70%;
-	}
-	.main_sec1 {
-	  float: none;
-	}
-	.main_sec1 form {
-	  margin-top: 40px;
-	  width: 100%;
-	}
-	.form-text-sec {
-	  width: 100%;
 }
-}
-
 @media screen and (max-width:360px) {
 	.navbar-brand img {
 		width: 80%;

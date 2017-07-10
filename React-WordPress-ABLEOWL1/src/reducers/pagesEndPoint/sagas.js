@@ -14,7 +14,17 @@ import {
 
 function* asyncLoadPages() {
 //const response = yield call(loadPages);
-  const response = [{ "id": 3133,
+  const response = [
+
+    { "id": 3133,
+          "slug": "home",
+          "status": "publish",
+          "type": "page",
+          "link": "http://test.nzpuretour.com/home/",
+          "title": {
+              "rendered": "HOME"
+          }},
+         { "id": 3133,
         "slug": "casestudies",
         "status": "publish",
         "type": "page",
@@ -39,13 +49,21 @@ function* asyncLoadPages() {
                         "rendered": "THE SKILL"
                     }},
                     { "id": 3136,
-                          "slug": "thecaseforexcel",
+                          "slug": "theexceladvantage",
                           "status": "publish",
                           "type": "page",
-                          "link": "http://test.nzpuretour.com/thecaseforexcel/",
+                          "link": "http://test.nzpuretour.com/theexceladvantage/",
                           "title": {
-                              "rendered": "THE CASE FOR EXCEL"
+                              "rendered": "THE EXCEL ADVANTAGE"
                           }},
+                          { "id": 3136,
+                                "slug": "journal",
+                                "status": "publish",
+                                "type": "page",
+                                "link": "http://test.nzpuretour.com/journal/",
+                                "title": {
+                                    "rendered": "JOURNAL"
+                                }},
                           { "id": 3137,
                                 "slug": "contact",
                                 "status": "publish",

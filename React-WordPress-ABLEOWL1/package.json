@@ -10,8 +10,7 @@
     "start": "webpack-dev-server --config config/webpack/webpack.config.js",
     "prod": " webpack-dev-server --config config/webpack/webpack.config.js --env.production",
     "build": "webpack --config config/webpack/webpack.config.js --env.production && mv dist/index.html dist/home.html && cp index.php dist/index.php",
-   "build:clean": "npm run test:clean && rimraf ./dist"
-
+    "build:clean": "npm run test:clean && rimraf ./dist"
   },
   "ava": {
     "require": [
@@ -54,6 +53,7 @@
     "react-dom": "^15.4.2",
     "react-immutable-proptypes": "^2.1.0",
     "react-redux": "^5.0.3",
+    "react-render-html": "^0.3.0",
     "react-responsive": "^1.2.6",
     "react-router": "^3.0.1",
     "react-router-dom": "^4.1.1",

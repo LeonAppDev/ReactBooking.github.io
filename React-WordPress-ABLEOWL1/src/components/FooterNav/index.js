@@ -47,11 +47,9 @@ export class FooterNav extends Component{
     const { pages,stateInfo} = this.props;
 
     return(
-      <div>
-
       <footer>
-      <FooterLogo/>
       <div className={style.footerTop}>
+      <FooterLogo/>
       <div className={style.footerNav}>
       <ul>
       {pages.map(page=><li><Link key={page.get('id')} style={{marginRight:'10px'}} to={`/${page.get('slug')}`}>{page.getIn(['title','rendered'])}</Link></li>)}
@@ -59,11 +57,11 @@ export class FooterNav extends Component{
       </ul>
       </div>
       </div>
-      </footer>
       <div className={style.footerBot}>
           Copyright © {new Date().getFullYear()},<span><a href={style.homePage}>AbleOwl</a>.</span>All Rights Reserved. v1.0
       </div>
-      </div>
+      </footer>
+
 
     );
   }

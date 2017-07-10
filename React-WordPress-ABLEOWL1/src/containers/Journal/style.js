@@ -1,8 +1,12 @@
 const style={
   contentWrap:'content-wrapper',
+  journal:'journal',
   container:'container',
+  colMd5:'col-md-5',
   mainSec:'main_sec',
   hireHeading:'hire-heading',
+  sampleImg:'sample-img',
+  sampleBth:'sample-btn',
   iStyle: ['fa','fa-check'].join(' '),
   expertImg:'expert-img',
   textSection:'text-section',
@@ -15,6 +19,15 @@ const style={
   chcekBox:'checkbox',
   subBtn:'sub-btn',
   canBtn:'cancel-btn',
+  greyHire:['grey-section','hire-heading'].join(" "),
+  testimonial:'testimonial',
+  rowTesti:['row','testimonial'].join(" "),
+  clientSec:'client-section',
+    colMd7:'col-md-7',
+    journalVideo:'journal-video',
+    row:'row',
+    colMd3:'col-md-3',
+    imgOwl:'img-owl',
 
 };
 
