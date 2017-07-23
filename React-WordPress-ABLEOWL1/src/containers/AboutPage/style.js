@@ -3,6 +3,7 @@ const style={
   container:'container',
     process:'process',
       hireHeading:'hire-heading',
+        iStyle: ['fa','fa-check'].join(' '),
 
 };
 

@@ -28,6 +28,7 @@ const style={
     row:'row',
     colMd3:'col-md-3',
     imgOwl:'img-owl',
+    video:'video',
 
 };
 

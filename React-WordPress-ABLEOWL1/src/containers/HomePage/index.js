@@ -3,6 +3,7 @@ import style from './style';
 import image from './image';
 import ListItem from 'components/ListItem';
 import SubscriptionForm from 'components/SubscriptionForm';
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,6 +12,8 @@ function HomePage() {
     const items=['With 30 years\' specialisation, be assured of continuity of support and commitment.','We are not a freelancers portal.',
     'Be confident that you engage top-level, efficient consultants.',
     'Have applications built with standard components and conventions, which help with productivity, robustness and maintainability.'];
+
+    const handleClick = ()=>window.scrollTo(0, 0);
 
   const container=(
     <div className={style.container}>
@@ -22,11 +25,11 @@ function HomePage() {
      </div>
     <div className={style.expertImg}><img src={image.expertImg}/></div>
     <div className={style.textSection}>
-    <p>For case studies, see the <span>Case studies page.</span></p>
-					<p>For the development process, see <span>The Process</span> page.</p>
-					<p>For a full list of what we do with Excel see the <span>About</span> page.</p>
-					<p>To contact us with your requirement, see the <span>Contact</span> page.</p>
-					<p>To get the free Excel case studies and tips journal, subscribe on the <span>Journal</span> page.</p>
+    <p>For case studies, see the <span><Link to='casestudies' onClick={handleClick}>Case studies page.</Link></span></p>
+					<p>For the development process, see <span><Link to='theprocess' onClick={handleClick}>The Process</Link></span> page.</p>
+					<p>For a full list of what we do with Excel see the <span><Link to='about' onClick={handleClick}>About</Link></span> page.</p>
+					<p>To contact us with your requirement, see the <span><Link to='contact' onClick={handleClick}>Contact</Link></span> page.</p>
+					<p>To get the free Excel case studies and tips journal, subscribe on the <span><Link to='journal' onClick={handleClick}>Journal</Link></span> page.</p>
           </div>
     </div>
     </div>

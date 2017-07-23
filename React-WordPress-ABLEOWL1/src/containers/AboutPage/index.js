@@ -4,6 +4,7 @@ import media from './media';
 import Paragraph from 'components/Paragraph';
 import ListItem from 'components/ListItem';
 import SubscriptionForm from 'components/SubscriptionForm';
+import renderHTML from 'react-render-html';
 
 
 function AboutList({aboutItems}){
@@ -12,7 +13,9 @@ function AboutList({aboutItems}){
 
    <div className={style.hireHeading}>
 
-   {aboutItems.map(aboutItem=><div><ListItem items={aboutItem.items}/><div style={{marginTop:'30px',marginBottom:'60px',textAlign:'center'}}><img src={aboutItem.img}/></div></div>)}
+   {aboutItems.map(aboutItem=><div>{
+    <ul>{aboutItem.items.map(item=><li><span><i aria-hidden="true" className={style.iStyle}></i></span>{renderHTML(item)}</li>)}
+    </ul>}<div style={{marginTop:'30px',marginBottom:'60px',textAlign:'center'}}><img src={aboutItem.img}/></div></div>)}
    </div>
   )
 }
@@ -22,12 +25,12 @@ function AboutPage(){
 
   const paragraphItems=[{title:'',contents:['AbleOwl are a centre of expertise in Microsoft Excel.'],img:''},
                  ];
-  const aboutItems=[{items:['30+ years experience in creating Excel application for clients'],img:media.expertImg},
-                    {items:['Certified professional in Excel for finance study and qualification.'],img:media.coatofarmImg},
-                    {items:['60 1-hour webinar recordings with detailed manuals all at a level above beginner.'],img:media.webinarImg},
-                      {items:['Broadest range of over 20 Excel courses.'],img:media.homeTrainingImg},
+  const aboutItems=[{items:['30+ years experience in creating Excel applications for clients'],img:media.expertImg},
+                    {items:['<a href="/qualification">Certified professional in Excel for finance </a>study and qualification.'],img:media.coatofarmImg},
+                    {items:['<a href="/webinarecordings">60 1-hour webinar recordings</a> with detailed manuals all at a level above beginner.'],img:media.webinarImg},
+                      {items:['Broadest range of over <a href="/excelcourse">20 Excel courses</a>.'],img:media.homeTrainingImg},
                         {items:['ESP (Excel Standardisation Programme): A set of conventions, standard components and tools \
-                        to rapidly develop Excel applications. Utilise the free GenieMini add-in to implement that and do the free online course.'],img:media.genieImg},
+                        to rapidly develop Excel applications. Utilise the free <a href="/geniemini">GenieMini</a> add-in to implement that and do the <a href="/onlinecourse">free online course</a>.'],img:media.genieImg},
                       {items:['Hotline support.'],img:media.listenerImg},
                   ];
 

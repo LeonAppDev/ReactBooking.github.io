@@ -11,16 +11,17 @@ function Contact() {
 								<li><span className={style.icon}><img src={media.addressImg}/></span>
 								<span><strong>ADDRESS</strong><address><br/>100 Wilshire Blvd, Suite 700 Santa Monica, CA  90401</address></span></li>
 								<li><span className={style.icon}><img src={media.phoneImg}/></span>
-									<span><strong>PHONE </strong><br/> +1 310.917.1000</span></li>
+									<span><strong>PHONE </strong><br/> +1 310.917.1027</span></li>
 								<li><span className={style.icon}><img src={media.emailImg}/></span>
-									<span><strong>EMAIL </strong><br/>admin@ableowl.com</span></li>
-								<li><span className={style.icon}><img src={media.faxImg}/></span>
-									<span><strong>FAX </strong><br/>+1 310.917.1001</span></li>
+									<span><strong>EMAIL </strong><br/><a href="mailto:admin@ableowl.com">admin@ableowl.com</a></span></li>
+
 							</ul>
 
 
    );
-   
+
+  const onSubmit = (e)=>{emailjs.send("outlook","template_EqPij2SK",{from_name: "James", notes: "Check this out!"});};
+
   return (
     <section id={style.contentWrap}>
     <div className={style.container}>
@@ -32,10 +33,10 @@ function Contact() {
           <img src={media.listenerImg} className={style.supportImg}/>
           </div>
           <div className={style.colMd7}>
-         <ContactSubscriptionForm />
-          </div>
-          </div>
 
+          <ContactSubscriptionForm />
+          </div>
+          </div>
         </div>
      </div>
    <SubscriptionForm/>

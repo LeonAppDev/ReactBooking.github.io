@@ -41,6 +41,10 @@ export class FooterNav extends Component{
     this.props.getPages();
   }
 
+  handleClick()
+  {
+     window.scrollTo(0, 0);
+  }
 
   render()
   {
@@ -52,17 +56,15 @@ export class FooterNav extends Component{
       <FooterLogo/>
       <div className={style.footerNav}>
       <ul>
-      {pages.map(page=><li><Link key={page.get('id')} style={{marginRight:'10px'}} to={`/${page.get('slug')}`}>{page.getIn(['title','rendered'])}</Link></li>)}
+      {pages.map(page=><li><Link key={page.get('id')} style={{marginRight:'10px'}} to={`/${page.get('slug')}`} onClick={()=>this.handleClick()}>{page.getIn(['title','rendered'])}</Link></li>)}
       {console.log(stateInfo)}
       </ul>
       </div>
       </div>
       <div className={style.footerBot}>
-          Copyright © {new Date().getFullYear()},<span><a href={style.homePage}>AbleOwl</a>.</span>All Rights Reserved. v1.0
+          Copyright © {new Date().getFullYear()},<span><Link to='/Home' onClick={()=>this.handleClick()}>AbleOwl</Link>.</span>All Rights Reserved. v1.0
       </div>
       </footer>
-
-
     );
   }
 

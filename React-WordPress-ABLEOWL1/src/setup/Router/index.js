@@ -10,7 +10,7 @@ import ExcelAdvantage from 'containers/ExcelAdvantage';
 import Contact from 'containers/Contact';
 import AboutPage from 'containers/AboutPage';
 import NotReadyPage from 'containers/NotReadyPage';
-// import About from 'containers/About';
+import RedirectExternal from 'components/RedirectExternal';
 
 export const routes = [
   { path: '/home', component: HomePage },
@@ -21,6 +21,14 @@ export const routes = [
   {path: '/theexceladvantage', component: ExcelAdvantage },
   {path: '/contact', component: Contact },
   {path: '/about', component: AboutPage },
+//  {path:'/external',render: () => {window.location = 'http://www.ableowl.com'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
+ {path:'/onlinecourse',render: ()=>{window.location = 'http://www.ableowl.com/Products/GenieAddIn/GenieEssentialCourse.aspx?id=10';return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
+ //{path:'/onlinecourse',render: ()=>window.location = 'http://www.ableowl.com/Products/GenieAddIn/GenieEssentialCourse.aspx?id=10'},
+
+  {path:'/qualification',render: ()=>{window.location = 'http://www.ableowl.com/products/Qualification/qualificationad9.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
+  {path:'/webinarecordings',render: ()=>{window.location = 'http://www.ableowl.com/Courses/WebinarRecording/MyVideos.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
+{path:'/excelcourse',render: ()=>{window.location = 'http://www.ableowl.com/Courses/CoursesOverview.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
+{path:'/geniemini',render: ()=>{window.location = 'http://www.ableowl.com/Genie/Download/AddIn.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
   { path: '*', component: NotReadyPage },
 ];
 
@@ -32,7 +40,7 @@ function Router() {
           <Redirect exact from="/" to="/home" />
           {
             routes.map(route =>
-              <Route key={route.path} component={route.component} path={route.path} />,
+              <Route key={route.path} component={route.component} path={route.path} render={route.render}/>,
             )
           }
         </Switch>

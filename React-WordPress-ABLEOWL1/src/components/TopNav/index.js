@@ -58,7 +58,7 @@ export class TopNav extends Component {
 handleClick(id)
 {
   //  this.setState({focus:id});
-
+  window.scrollTo(0, 0);
 }
 
   render() {
