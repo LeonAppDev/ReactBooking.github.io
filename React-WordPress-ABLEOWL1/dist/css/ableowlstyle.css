@@ -1,0 +1,537 @@
+body {
+	/* background: #F3F3F3; */
+	font-size: 16px!important;
+	font-family: 'Open Sans', sans-serif!important;
+	padding-top: 130px!important;
+}
+a:hover, a:focus {
+	text-decoration: none;
+	outline-offset: 0;
+}
+.header-bg {
+	background-color: #fff;
+	border-bottom: 1px solid #cccccc !important;
+	height: 100px;
+	margin-bottom: 0;
+	padding:0 30px 0 30px;
+}
+.navbar-brand {
+	padding: 9px;
+}
+.navbar-brand img {
+  width: 38%;
+}
+
+.nav-main {
+	text-align: right;
+}
+.grey-section {
+  background: #f8f8f8 none repeat scroll 0 0;
+  margin-top: 50px;
+  padding: 40px 0;
+}
+.grey-section .main_sec > ul {
+  padding: 0;
+}
+.grey-section .main_sec > h4 {
+  margin: 15px 0;
+}
+
+.grey-section .main_sec > p {
+  margin: 26px 0;
+}
+.nav.navbar-nav a {
+  color: #000 !important;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.nav-top, .nav-main {
+  float: right;
+  margin-top: 17px;
+}
+.nav.navbar-nav a:hover {
+  border-bottom: 1px solid #0f46a8;
+}
+#content-wrapper {
+	min-height: 450px;
+}
+
+/*********Footer CSS ************/
+
+.logo-footer > img {
+  width: 6%;
+}
+.footer-top {
+  background: #0d141b none repeat scroll 0 0;
+  padding: 50px 0 20px;
+  text-align: center;
+  width: 100%;
+}
+.footer-navigation li {
+	float: left;
+	list-style: outside none none;
+	margin: 0 10px;
+}
+.footer-navigation a {
+	color: #99c1da;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+.footer-bottom {
+	background: #000000 none repeat scroll 0 0;
+	color: #99c1da;
+	font-size: 13px;
+	padding: 20px 0;
+	text-align: center;
+}
+.footer-navigation ul {
+	display: inline-block;
+	padding: 15px 0 0 0;
+}
+.footer-bottom a {
+	color: #5c84b4;
+}
+.main_sec {
+	margin: 0 auto;
+	width: 50%;
+}
+.hire-heading h2, .testimonial h2 {
+	color: #95b3d7;
+	font-size: 37px;
+	letter-spacing: 4px;
+	line-height: 45px;
+}
+.hire-heading>ul {
+	padding: 0;
+}
+.hire-heading li {
+	list-style: outside none none;
+	margin-bottom: 9px;
+}
+.expert-img {
+	margin: 30px 0 50px;
+	text-align: center;
+}
+.text-section>p {
+	margin-bottom: 30px;
+}
+.form-sec-bg {
+	background: #9aaed2 none repeat scroll 0 0;
+	height: auto;
+	padding: 40px 0;
+	width: 100%;
+}
+.main_sec1 {
+	float: right;
+	margin: 0 auto;
+	width: 75%;
+}
+.form-text-sec {
+	float: left;
+	margin-top: 37px;
+	width: 50%;
+}
+.form-text-sec>h2 {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.5;
+	text-transform: uppercase;
+}
+.form-text-sec>p {
+	color: #fff;
+}
+.main_sec1 form {
+	margin-top: 40px;
+	width: 73%;
+}
+.form-control::-moz-placeholder {
+	color: #fff;
+}
+
+.form-control::-webkit-input-placeholder {
+color: #fff;
+background:transparent;
+}
+
+option {
+    background-color: #9AAED2;
+}
+.main_sec1 .form-control, .main_sec1 select
+.main_sec1 .form-control, .main_sec1 select {
+	background: transparent none repeat scroll 0 0;
+	border: 2px solid #fff;
+	border-radius: 0;
+	color: #fff;
+	height: 50px;
+	width: 100%;
+}
+.checkbox {
+	margin: 25px 0;
+}
+.checkbox label {
+	padding-left: 0;
+	/*width: 100%;*/
+}
+.checkbox input {
+	text-align: right;
+	width: 42%;
+	margin-left: 0 !important;
+}
+.sub-btn {
+	background: #161a1f none repeat scroll 0 0;
+	border: medium none;
+	color: #fff;
+	letter-spacing: 2px;
+	padding: 14px 25px;
+}
+.cancel-btn {
+	background: #fff none repeat scroll 0 0;
+	border: medium none;
+	color: #9aaed2;
+	float: right;
+	letter-spacing: 2px;
+	padding: 14px 25px;
+}
+.hire-heading span {
+	color: #9aaed2;
+	float: left;
+	font-size: 16px;
+	height: 23px;
+	margin-right: 10px;
+}
+.text-section span {
+	color: #9aaed2;
+}
+.form-text-sec span {
+	margin-right: 18px;
+}
+.testimonial > p {
+  margin: 30px 0;
+}
+.video > img {
+  width: 100%;
+}
+.video-title {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.download-btn {
+  background: #9aafd3 none repeat scroll 0 0;
+  border: medium none;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin: 15px 0;
+  padding: 15px;
+  width: 100%;
+}
+.download-btn::after {
+  background: rgba(0, 0, 0, 0) url("http://test.nzpuretour.com/wp-content/uploads/2017/07/dwnld-icon.png") no-repeat scroll 0 0;
+  bottom: 28px;
+  content: "";
+  height: 31px;
+  position: absolute;
+  right: 20%;
+  width: 25px;
+}
+
+.video {
+  margin: 15px 0;
+}
+.video-desc {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.name, .place {
+  color: #9aafd3;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+
+/*-----------------Journal page-----------------*/
+
+.journal {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.journal h1 {
+  color: #95b3d7;
+  font-size: 42px;
+  letter-spacing: 4px;
+  line-height: 45px;
+  margin-bottom: 35px;
+}
+
+ul.hire-heading {
+  padding: 0;
+}
+.journal .hire-heading > li {
+  font-size: 13px;
+}
+
+.sample-img > img {
+  width: 100%;
+}
+.sample-img {
+  display: inline-block;
+  margin: 15px 0;
+}
+.sample-btn {
+  background: #9aafd3 none repeat scroll 0 0;
+  border: medium none;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin: 25px 0;
+  padding: 14px 24px;
+  text-transform: uppercase;
+}
+.journal .form input[type="text"], .journal .form input[type="email"], .journal .form select {
+  border: 1px solid #9aafd3;
+  border-radius: 0;
+  height: 42px;
+  width: 100%;
+  padding: 2px 10px;
+}
+.journal .form-control::placeholder, .journal .form select {
+  color: #333;
+  font-size: 13px;
+}
+.journal label {
+  font-size: 13px;
+}
+.journal .checkbox input {
+  right: 0;
+  width: 4%;
+}
+.journal .sub-btn {
+  background: #9aafd3 none repeat scroll 0 0;
+  border: medium none;
+  color: #fff;
+  letter-spacing: 2px;
+  padding: 14px 25px;
+}
+.journal .cancel-btn {
+  background: #b1b8c5;
+  border: medium none;
+  color: #fff;
+  float: right;
+  letter-spacing: 2px;
+  padding: 14px 25px;
+}
+.journal-video > h2 {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+.journal-video > img {
+  width: 100%;
+}
+.img-owl {
+  width: 100%;
+}
+.testi {
+  display: inline-block;
+  margin: 15px 0;
+}
+.testi > p {
+  font-size: 14px;
+  line-height: 26px;
+}
+.testi > span {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.client-section {
+  margin: 40px auto;
+  text-align: center;
+  width: 75%;
+}
+.client-section h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/*-----------------Contact page-----------------*/
+
+.contact {
+  padding-bottom: 60px;
+}
+
+#exampleInputphone1 {
+  float: left;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  width: 60%;
+}
+
+.call_check {
+  font-size: 13px;
+  font-weight: normal;
+  margin-top: 10px;
+}
+textarea {
+  font-size: 13px!important;
+  height: 150px!important;
+  margin-top: 17px!important;
+	width:100%!important;
+}
+.address {
+  padding: 0;
+}
+.address > li {
+  list-style: outside none none;
+  margin-bottom: 15px;
+}
+.icon {
+  float: left;
+  margin-right: 15px;
+  width: 28px;
+}
+.address span {
+  display: table;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+address {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+
+/*********TheProcess page Leon************/
+.process {
+  margin: 0 auto;
+  width: 40%;
+}
+
+.process h1 {
+  color: #95b3d7;
+  font-size: 37px;
+  letter-spacing: 4px;
+  line-height: 45px;
+  margin-bottom: 35px;
+	display:block;
+}
+
+/*********Responsive css************/
+
+@media screen and (min-width:220px) and (max-width:767px) {
+	.navbar-brand {
+		padding: 20px 6px 0;
+		width: 29%;
+	}
+	.navbar-brand>img {
+		height: auto;
+		margin-top: 7px;
+		width: 100%;
+	}
+	.navbar-toggle .icon-bar {
+		border: 1px solid #d03135;
+	}
+	.navbar-toggle {
+		margin-right: 20px;
+		margin-top: 8px;
+		padding: 17px 0;
+		border: medium none;
+	}
+	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+		background-color: transparent;
+	}
+	body {
+		font-size: 13px;
+	}
+	.navbar-brand img {
+		margin-top: 0;
+		width: 45%;
+	}
+	.nav-main {
+		background: #fff none repeat scroll 0 0;
+		float: left;
+		text-align: left;
+		width: 100%;
+	}
+	.navbar-nav {
+		margin: 7px 10px;
+	}
+	.navbar-default .navbar-nav>li>a {
+		padding: 10px;
+	}
+	.nav.navbar-nav a:after {
+		display: none;
+	}
+	.nav.navbar-nav a {
+	  font-size: 15px;
+	}
+	.nav-main {
+	  margin-top: 35px;
+	}
+	.client-section img {
+	  width: 78%;
+	}
+	.hire-heading h2, .testimonial h2 {
+	  font-size: 28px;
+	}
+	.journal h1 {
+	  font-size: 29px;
+	  letter-spacing: 1px;
+	  line-height:35px;
+	}
+	.journal {
+	  width: 90%;
+	}
+	.journal button {
+	  margin-bottom: 10px;
+	  margin-left: 0;
+	}
+	.main_sec {
+	  width: 70%;
+	}
+	.main_sec1 {
+	  float: none;
+	}
+	.main_sec1 form {
+	  margin-top: 40px;
+	  width: 100%;
+	}
+	.form-text-sec {
+	  width: 100%;
+}
+}
+
+@media screen and (max-width:360px) {
+	.navbar-brand img {
+		width: 80%;
+	}
+}
+@media screen and (min-width:768px) and (max-width:1024px) {
+	.navbar-brand img {
+		width: 80%;
+	}
+	.navbar-header {
+		float: left;
+		width: 100px;
+	}
+	.nav.navbar-nav a::after {
+		margin-left: 10px;
+	}
+	.navbar-default .navbar-nav>li>a {
+		font-size: 13px;
+		padding: 10px 14px;
+	}
+}
+
+@media screen and (min-width:1600px) and (max-width:1920px) {
+.logo-footer > img {
+  width: 5%;
+}
+}
