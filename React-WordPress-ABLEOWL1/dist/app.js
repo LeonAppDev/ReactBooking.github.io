@@ -33182,7 +33182,8 @@ var ContactSubscriptionForm = function (_Component) {
 
     _this.state = { showError: false,
       showSuccess: false,
-      country: 'United States' };
+      country: 'United States',
+      loading: false };
     return _this;
   }
 
@@ -33196,17 +33197,35 @@ var ContactSubscriptionForm = function (_Component) {
         var sendMessage = false;
         _this2.state.name && _this2.state.email ? sendMessage = true : _this2.setState({ showError: true, errorMessage: 'Please make sure name and email is not null and email address is valid' });
         if (sendMessage === true) {
+
           var callMe = '';
           _this2.state.callSelect ? callMe = 'Please Call Me.' : callMe = 'Please do not Call Me.';
-          _this2.setState({ showError: false });
+          _this2.setState({ showError: false,
+            showSuccess: false,
+            errorMessage: '',
+            successMessage: '',
+            loading: true });
+
           emailjs.send("outlook", "template_EqPij2SK", { to_name: 'Admin', from_name: _this2.state.name, email: _this2.state.email,
             phone_number: 'Phone Number is ' + _this2.state.phoneNum, call_me: callMe, from_country: 'From ' + _this2.state.country, notes: _this2.state.message }).then(function (response) {
             //console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-            alert("SUCCESS.");
+            //alert("Your email has been sent. You will be contacted within 1 working day.");
+            _this2.setState({ loading: false,
+              showSuccess: true,
+              successMessage: 'Your email has been sent. You will be contacted within 1 working day.',
+              name: '',
+              email: '',
+              phoneNum: '',
+              callSelect: false,
+              message: '' });
+            console.log(response);
           }, function (err) {
 
-            alert("FAILED. error=" + err);
-            console.log("FAILED.");
+            /* alert("FAILED. error=" + err);
+             console.log("FAILED.");*/
+            this.setState({ showError: true,
+              loading: false,
+              errorMessage: "FAILED. error=" + err });
           });
         } else {
 
@@ -33243,30 +33262,31 @@ var ContactSubscriptionForm = function (_Component) {
       var messageChange = function messageChange(e) {
         _this2.setState({ message: e.target.value });
       };
+
       return _react2.default.createElement(
         'div',
         { className: _style2.default.form },
         _react2.default.createElement(
           'div',
           { className: _style2.default.formGroup },
-          _react2.default.createElement('input', { className: _style2.default.formControl, id: 'exampleInputEmail1', placeholder: 'Name', type: 'text', onChange: nameChange })
+          _react2.default.createElement('input', { className: _style2.default.formControl, id: 'exampleInputEmail1', placeholder: 'Name', type: 'text', onChange: nameChange, value: this.state.name })
         ),
         _react2.default.createElement(
           'div',
           { className: _style2.default.formGroup },
-          _react2.default.createElement('input', { className: _style2.default.formControl, id: 'exampleInputPassword1', placeholder: 'Email (Your email address will not be shared)', type: 'email', onChange: emailChange })
+          _react2.default.createElement('input', { className: _style2.default.formControl, id: 'exampleInputPassword1', placeholder: 'Email (Your email address will not be shared)', type: 'email', onChange: emailChange, value: this.state.email })
         ),
         _react2.default.createElement(
           'div',
           { className: _style2.default.formGroup },
-          _react2.default.createElement('input', { className: _style2.default.formControl, id: 'exampleInputphone1', placeholder: 'Phone', type: 'text', onChange: phoneChange }),
+          _react2.default.createElement('input', { className: _style2.default.formControl, id: 'exampleInputphone1', placeholder: 'Phone', type: 'text', onChange: phoneChange, value: this.state.phoneNum }),
           _react2.default.createElement(
             'label',
             { className: _style2.default.callCheck },
             'Please call me'
           ),
           ' ',
-          _react2.default.createElement('input', { type: 'checkbox', onChange: callChange })
+          _react2.default.createElement('input', { type: 'checkbox', onChange: callChange, checked: this.state.callSelect })
         ),
         _react2.default.createElement(
           'select',
@@ -33282,7 +33302,7 @@ var ContactSubscriptionForm = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: _style2.default.formGroup },
-          _react2.default.createElement('textarea', { rows: '4', cols: '8', placeholder: 'Message', onChange: messageChange })
+          _react2.default.createElement('textarea', { rows: '4', cols: '8', placeholder: 'Message', onChange: messageChange, value: this.state.message })
         ),
         _react2.default.createElement(
           _OptionallyDisplayed2.default,
@@ -33301,7 +33321,7 @@ var ContactSubscriptionForm = function (_Component) {
         _react2.default.createElement(
           'button',
           { className: _style2.default.subBtn, type: 'submit', onClick: onSubmit },
-          'SUBMIT'
+          this.state.loading ? 'SUBMITING...' : 'SUBMIT'
         )
       );
     }
@@ -34402,7 +34422,7 @@ var SFNorthAmerica = '<!-- Begin MailChimp Signup Form -->\
 		<div class="response" id="mce-success-response" style="display:none"></div>\
 	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->\
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f4f32d37e954c18920dd73780_8b64774be0" tabindex="-1" value=""></div>\
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" class="sub-btn"><a class="cancel-btn" href="http://ableowl.us15.list-manage2.com/unsubscribe?u=f4f32d37e954c18920dd73780&id=8b64774be0">CANCEL MY SUBSCRIPTION</a></div>\
+    <div class="clear"><input type="submit" value="SUBSCRIBE" name="subscribe" class="sub-btn"><br/><a class="cancel-btn" href="http://ableowl.us15.list-manage2.com/unsubscribe?u=f4f32d37e954c18920dd73780&id=8b64774be0">CANCEL MY SUBSCRIPTION</a></div>\
     </div>\
 </form>\
 </div>\
@@ -35429,7 +35449,8 @@ var SFNorthAmerica = '<!-- Begin MailChimp Signup Form -->\
 		<div class="response" id="mce-success-response" style="display:none"></div>\
 	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->\
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f4f32d37e954c18920dd73780_8b64774be0" tabindex="-1" value=""></div>\
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" class="sub-btn"><a class="cancel-btn" href="http://ableowl.us15.list-manage2.com/unsubscribe?u=f4f32d37e954c18920dd73780&id=8b64774be0">CANCEL MY SUBSCRIPTION</a></div>\
+    <input type="submit" value="SUBSCRIBE" name="subscribe" class="sub-btn"><br/>\
+     <a class="cancel-btn" href="http://ableowl.us15.list-manage2.com/unsubscribe?u=f4f32d37e954c18920dd73780&id=8b64774be0">CANCEL MY SUBSCRIPTION</a>\
     </div>\
 </form>\
 </div>\
@@ -35676,7 +35697,7 @@ function AboutPage() {
 
   var paragraphItems = [{ title: '', contents: ['AbleOwl are a centre of expertise in Microsoft Excel.'], img: '' }];
   var aboutItems = [{ items: ['30+ years experience in creating Excel applications for clients'], img: _media2.default.expertImg }, { items: ['<a href="/qualification">Certified professional in Excel for finance </a>study and qualification.'], img: _media2.default.coatofarmImg }, { items: ['<a href="/webinarecordings">60 1-hour webinar recordings</a> with detailed manuals all at a level above beginner.'], img: _media2.default.webinarImg }, { items: ['Broadest range of over <a href="/excelcourse">20 Excel courses</a>.'], img: _media2.default.homeTrainingImg }, { items: ['ESP (Excel Standardisation Programme): A set of conventions, standard components and tools \
-                        to rapidly develop Excel applications. Utilise the free <a href="/geniemini">GenieMini</a> add-in to implement that and do the <a href="/onlinecourse">free online course</a>.'], img: _media2.default.genieImg }, { items: ['Hotline support.'], img: _media2.default.listenerImg }];
+                        to rapidly develop Excel applications. Utilise the free <a href="/geniemini">GenieMini</a> add-in to implement that and do the <a href="/onlinecourse">free online course</a>.'], img: _media2.default.genieImg }, { items: ['<a href="/hotline">Hotline support.</a>'], img: _media2.default.listenerImg }];
 
   return _react2.default.createElement(
     'section',
@@ -35862,12 +35883,21 @@ function Video(_ref) {
     _react2.default.createElement(
       'span',
       { className: _style2.default.name },
-      content.name
+      _react2.default.createElement(
+        'p',
+        null,
+        content.name
+      )
     ),
+    _react2.default.createElement('br', null),
     _react2.default.createElement(
       'span',
       { className: _style2.default.place },
-      content.place
+      _react2.default.createElement(
+        'p',
+        null,
+        content.place
+      )
     ),
     _react2.default.createElement(
       'button',
@@ -35887,14 +35917,14 @@ function VideoGrid() {
     'div',
     { className: _style2.default.row },
     _react2.default.createElement(Video, { content: _videos2.default[0] }),
-    _react2.default.createElement(Video, { content: _videos2.default[1], styleButton: { marginTop: '38px' } }),
+    _react2.default.createElement(Video, { content: _videos2.default[1], styleButton: { marginTop: '14px' } }),
     _react2.default.createElement(Video, { content: _videos2.default[2], styleButton: { marginTop: '38px' }, styleImg: { height: '150px' }, showImg: true }),
-    _react2.default.createElement(Video, { content: _videos2.default[3], styleButton: { marginTop: '38px' }, showImg: true }),
+    _react2.default.createElement(Video, { content: _videos2.default[3], styleButton: { marginTop: '122px' }, styleImg: { height: '151px', marginTop: '28px' }, showImg: true }),
     _react2.default.createElement(Video, { content: _videos2.default[4], styleVideo: { marginTop: '44px' } }),
     _react2.default.createElement(Video, { content: _videos2.default[5], styleVideo: { marginTop: '21px' } }),
     _react2.default.createElement(Video, { content: _videos2.default[6] }),
-    _react2.default.createElement(Video, { content: _videos2.default[7], styleButton: { marginTop: '98px' } }),
-    _react2.default.createElement(Video, { content: _videos2.default[8], styleButton: { marginTop: '98px' } })
+    _react2.default.createElement(Video, { content: _videos2.default[7], styleButton: { marginTop: '83px' } }),
+    _react2.default.createElement(Video, { content: _videos2.default[8], styleButton: { marginTop: '83px' } })
   );
 }
 
@@ -35968,7 +35998,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var videos = [{ title: "Warehouse map",
   src: '//videos.sproutvideo.com/embed/709adbb01d1ae4c2f8/a83ba8f0ee45dbea',
-  videoDesc: '”Having a full visual of the stock in our warehouse through this mapping software has improved our flow tenfold.”',
+  videoDesc: '”Having a full visual of the inventory in our warehouse through this mapping software has improved our flow tenfold.”',
   name: 'John Malfitana, General Manager',
   place: 'Warehouse and Distribution Solutions',
   pdfFileUrl: 'http://ableowl.net/wp-content/uploads/2017/07/CaseStudyWarehouseMap.pdf'
@@ -35994,20 +36024,20 @@ var videos = [{ title: "Warehouse map",
   src: '//videos.sproutvideo.com/embed/e89adbb11d1fe7cb60/770d8a46981b0400',
   videoDesc: '"We reduced the task from most of a day to 10 minutes and greatly improved accuracy."',
   name: 'Gordon Foss, Finance Director',
-  place: 'Crown fork lifts, New Zealand',
+  place: 'Crown fork lifts',
   pdfFileUrl: 'http://ableowl.net/wp-content/uploads/2017/07/CaseStudyQuotes.pdf'
 
 }, { title: "Bill of Materials from external inputs",
   src: '//videos.sproutvideo.com/embed/4c9adbb11d1fe7c6c4/9700fbd6787bff91',
   videoDesc: '“A task of 25+hours reduced to 90 seconds.”',
   name: 'Neville Ward, Research and Development Manager',
-  place: 'Robertson Manufacturing, NZ',
+  place: 'Robertson Manufacturing',
   pdfFileUrl: 'http://ableowl.net/wp-content/uploads/2017/07/CaseStudyRobertsonMfng.pdf'
 }, { title: "Dairy diary",
   src: '//videos.sproutvideo.com/embed/709adbb11d1fe7c5f8/d75130861ca597db',
   videoDesc: '"The software is easy to pick up, easy to follow, simple and everything is automated."',
   name: 'Krispin Kannan, Veterinarian ',
-  place: 'VetEnt, New Zealand',
+  place: 'VetEnt',
   pdfFileUrl: 'http://ableowl.net/wp-content/uploads/2017/07/CaseStudyDairyDiary.pdf'
 }, { title: "Import MYOB actuals into reports",
   src: '//videos.sproutvideo.com/embed/e89adbb11f16eccb60/a9883e874f34fe7e',
@@ -36327,14 +36357,14 @@ function Contact() {
           'EMAIL '
         ),
         _react2.default.createElement('br', null),
-        'admin@ableowl.com'
+        _react2.default.createElement(
+          'a',
+          { href: 'mailto:admin@ableowl.com' },
+          'admin@ableowl.com'
+        )
       )
     )
   );
-
-  var onSubmit = function onSubmit(e) {
-    emailjs.send("outlook", "template_EqPij2SK", { from_name: "James", notes: "Check this out!" });
-  };
 
   return _react2.default.createElement(
     'section',
@@ -36725,7 +36755,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function HomePage() {
 
-  var items = ['With 30 years\' specialisation, be assured of continuity of support and commitment.', 'We are not a freelancers portal.', 'Be confident that you engage top-level, efficient consultants.', 'Have applications built with standard components and conventions, which help with productivity, robustness and maintainability.'];
+  var items = ['With 30 years\' specialization, be assured of continuity of support and commitment.', 'We are not a freelancers portal.', 'Be confident that you engage top-level, efficient consultants.', 'Have applications built with standard components and conventions, which help with productivity, robustness and maintainability.'];
 
   var handleClick = function handleClick() {
     return window.scrollTo(0, 0);
@@ -36748,7 +36778,7 @@ function HomePage() {
         _react2.default.createElement(
           'p',
           null,
-          'We build custom applications in Excel and improve your existing spreadsheets.'
+          'We build custom applications in Excel/VBA macro programming and improve your existing spreadsheets.'
         ),
         _react2.default.createElement(_ListItem2.default, { items: items })
       ),
@@ -37682,7 +37712,7 @@ function TheSkill() {
       approaches they plan to use and directs them to other approaches if need be.'], img: _media2.default.expertImg }, { title: '', contents: ['Some applications benefit from not storing data on spreadsheets but in a database instead. \
           In that way, there is only <b>one source for a particular value,</b> which is easily extracted to a spreadsheet that needs it.', 'Such transfer of data to and from a database, transparent to the user, needs additional skill beyond that of Excel alone.'], img: _media2.default.databaseImg }, { title: '', contents: ['Emailing updated versions of spreadsheets can result in users working off outdated versions. That issue is easily solved by us \
               by using an external database to store the latest spreadsheet <b>versions, which, transparent to the user, update automatically</b> when they open an application.', '<b>People move on</b> and another at AbleOwl or the client company needs to continue with certain applications. That task is difficult if each developer applies their own or no conventions. \
-              So, all applications developed by AbleOwl use the ESP conventions.'], img: _media2.default.exitImg }, { title: '', contents: ['In addition to making the application easier to understand for others, <b>ESP conventions and standard components</b> enable much greater development and usage productivity.', 'For more information on ESP, see the <a href="/onlinecourse" >free online course</a> and learn in detail with part 1 of <a href="/qualification" >the Certified Professional in Excel for Finance study and qualification</a>.', 'An understanding of the different functions of a business such as <b>Finance, Operations, HR, Marketing, Sales, Engineering, R&D, Production, Purchasing, Admin, IT</b> and so on helps.', 'After many of years of creating a wide variety of applications for different functions, we have gained an understanding of many functional areas.'], img: _media2.default.hatallImg }];
+              So, all applications developed by AbleOwl use the ESP conventions.'], img: _media2.default.exitImg }, { title: '', contents: ['In addition to making the application easier to understand for others, <b>ESP conventions and standard components</b> enable much greater development and usage productivity.', 'For more information on ESP, see the <a href="/onlinecourseskill" >free online course</a> and learn in detail with part 1 of <a href="/qualificationskill" >the Certified Professional in Excel for Finance study and qualification</a>.', 'An understanding of the different functions of a business such as <b>Finance, Operations, HR, Marketing, Sales, Engineering, R&D, Production, Purchasing, Admin, IT</b> and so on helps.', 'After many of years of creating a wide variety of applications for different functions, we have gained an understanding of many functional areas.'], img: _media2.default.hatallImg }];
 
   return _react2.default.createElement(
     'section',
@@ -38547,42 +38577,31 @@ var _RedirectExternal2 = _interopRequireDefault(_RedirectExternal);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var routes = exports.routes = [{ path: '/home', component: _HomePage2.default }, { path: '/casestudies', component: _CaseStudies2.default }, { path: '/journal', component: _Journal2.default }, { path: '/theprocess', component: _TheProcess2.default }, { path: '/theskill', component: _TheSkill2.default }, { path: '/theexceladvantage', component: _ExcelAdvantage2.default }, { path: '/contact', component: _Contact2.default }, { path: '/about', component: _AboutPage2.default },
-//  {path:'/external',render: () => {window.location = 'http://www.ableowl.com'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
-{ path: '/onlinecourse', render: function render() {
-    window.location = 'http://www.ableowl.com/Products/GenieAddIn/GenieEssentialCourse.aspx?id=10';return _react2.default.createElement(
-      'h1',
-      { style: { "text-align": "center" } },
-      'Redirect.....'
-    );
-  } },
-//{path:'/onlinecourse',render: ()=>window.location = 'http://www.ableowl.com/Products/GenieAddIn/GenieEssentialCourse.aspx?id=10'},
-
-{ path: '/qualification', render: function render() {
-    window.location = 'http://www.ableowl.com/products/Qualification/qualificationad9.aspx';return _react2.default.createElement(
-      'h1',
-      { style: { "text-align": "center" } },
-      'Redirect.....'
-    );
+var routes = exports.routes = [{ path: '/home', component: _HomePage2.default }, { path: '/casestudies', component: _CaseStudies2.default }, { path: '/journal', component: _Journal2.default }, { path: '/theprocess', component: _TheProcess2.default }, { path: '/theskill', component: _TheSkill2.default }, { path: '/theexceladvantage', component: _ExcelAdvantage2.default }, { path: '/contact', component: _Contact2.default }, { path: '/about', component: _AboutPage2.default }, { path: '/onlinecourse', render: function render() {
+    window.open('http://www.ableowl.com/Products/GenieAddIn/GenieEssentialCourse.aspx?id=10');return _react2.default.createElement(_AboutPage2.default, null);
+  } }, { path: '/onlinecourseskill', render: function render() {
+    window.open('http://www.ableowl.com/Products/GenieAddIn/GenieEssentialCourse.aspx?id=10');return _react2.default.createElement(_TheSkill2.default, null);
+  } }, { path: '/qualification', render: function render() {
+    window.open('http://www.ableowl.com/products/Qualification/qualificationad9.aspx');return _react2.default.createElement(_AboutPage2.default, null);
+  } }, { path: '/qualificationskill', render: function render() {
+    window.open('http://www.ableowl.com/products/Qualification/qualificationad9.aspx');return _react2.default.createElement(_TheSkill2.default, null);
   } }, { path: '/webinarecordings', render: function render() {
-    window.location = 'http://www.ableowl.com/Courses/WebinarRecording/MyVideos.aspx';return _react2.default.createElement(
-      'h1',
-      { style: { "text-align": "center" } },
-      'Redirect.....'
-    );
+    window.open('http://www.ableowl.com/Courses/WebinarRecording/MyVideos.aspx');return _react2.default.createElement(_AboutPage2.default, null);
   } }, { path: '/excelcourse', render: function render() {
-    window.location = 'http://www.ableowl.com/Courses/CoursesOverview.aspx';return _react2.default.createElement(
-      'h1',
-      { style: { "text-align": "center" } },
-      'Redirect.....'
-    );
+    window.open('http://www.ableowl.com/Courses/CoursesOverview.aspx');return _react2.default.createElement(_AboutPage2.default, null);
   } }, { path: '/geniemini', render: function render() {
-    window.location = 'http://www.ableowl.com/Genie/Download/AddIn.aspx';return _react2.default.createElement(
-      'h1',
-      { style: { "text-align": "center" } },
-      'Redirect.....'
-    );
-  } }, { path: '*', component: _NotReadyPage2.default }];
+    window.open('http://www.ableowl.com/Genie/Download/AddIn.aspx');return _react2.default.createElement(_AboutPage2.default, null);
+  } }, { path: '/hotline', render: function render() {
+    window.open('http://www.ableowl.com/products/hotline/hotlinead.aspx');return _react2.default.createElement(_AboutPage2.default, null);
+  } },
+/*
+  {path:'/qualification',render: ()=>{window.location = 'http://www.ableowl.com/products/Qualification/qualificationad9.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
+  {path:'/webinarecordings',render: ()=>{window.location = 'http://www.ableowl.com/Courses/WebinarRecording/MyVideos.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
+{path:'/excelcourse',render: ()=>{window.location = 'http://www.ableowl.com/Courses/CoursesOverview.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
+{path:'/geniemini',render: ()=>{window.location = 'http://www.ableowl.com/Genie/Download/AddIn.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
+*/
+
+{ path: '*', component: _NotReadyPage2.default }];
 
 function Router() {
   return _react2.default.createElement(
@@ -38815,4 +38834,4 @@ module.exports = __webpack_require__("./index.js");
 /***/ })
 
 },[1]);
-//# sourceMappingURL=app-c15aef5da9a7936367d4.js.map
+//# sourceMappingURL=app-f2f164ebbb08c4714c11.js.map

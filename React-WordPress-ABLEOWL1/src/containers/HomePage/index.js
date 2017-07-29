@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 function HomePage() {
 
-    const items=['With 30 years\' specialisation, be assured of continuity of support and commitment.','We are not a freelancers portal.',
+    const items=['With 30 years\' specialization, be assured of continuity of support and commitment.','We are not a freelancers portal.',
     'Be confident that you engage top-level, efficient consultants.',
     'Have applications built with standard components and conventions, which help with productivity, robustness and maintainability.'];
 
@@ -20,7 +20,7 @@ function HomePage() {
     <div className={style.mainSec}>
    <div className={style.hireHeading}>
     <h2>Hire a specialist Excel company</h2>
-    <p>We build custom applications in Excel and improve your existing spreadsheets.</p>
+    <p>We build custom applications in Excel/VBA macro programming and improve your existing spreadsheets.</p>
     <ListItem items={items} />
      </div>
     <div className={style.expertImg}><img src={image.expertImg}/></div>
