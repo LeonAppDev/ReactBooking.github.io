@@ -21,14 +21,21 @@ export const routes = [
   {path: '/theexceladvantage', component: ExcelAdvantage },
   {path: '/contact', component: Contact },
   {path: '/about', component: AboutPage },
-//  {path:'/external',render: () => {window.location = 'http://www.ableowl.com'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
- {path:'/onlinecourse',render: ()=>{window.location = 'http://www.ableowl.com/Products/GenieAddIn/GenieEssentialCourse.aspx?id=10';return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
- //{path:'/onlinecourse',render: ()=>window.location = 'http://www.ableowl.com/Products/GenieAddIn/GenieEssentialCourse.aspx?id=10'},
-
+ {path:'/onlinecourse',render: ()=>{window.open('http://www.ableowl.com/Products/GenieAddIn/GenieEssentialCourse.aspx?id=10');return <AboutPage />}},
+  {path:'/onlinecourseskill',render: ()=>{window.open('http://www.ableowl.com/Products/GenieAddIn/GenieEssentialCourse.aspx?id=10');return <TheSkill />}},
+  {path:'/qualification',render: ()=>{window.open('http://www.ableowl.com/products/Qualification/qualificationad9.aspx');return <AboutPage />}},
+    {path:'/qualificationskill',render: ()=>{window.open('http://www.ableowl.com/products/Qualification/qualificationad9.aspx');return <TheSkill />}},
+   {path:'/webinarecordings',render: ()=>{window.open('http://www.ableowl.com/Courses/WebinarRecording/MyVideos.aspx');return <AboutPage />}},
+    {path:'/excelcourse',render: ()=>{window.open('http://www.ableowl.com/Courses/CoursesOverview.aspx');return <AboutPage />}},
+     {path:'/geniemini',render: ()=>{window.open('http://www.ableowl.com/Genie/Download/AddIn.aspx');return <AboutPage />}},
+      {path:'/hotline',render: ()=>{window.open('http://www.ableowl.com/products/hotline/hotlinead.aspx');return <AboutPage />}},
+/*
   {path:'/qualification',render: ()=>{window.location = 'http://www.ableowl.com/products/Qualification/qualificationad9.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
   {path:'/webinarecordings',render: ()=>{window.location = 'http://www.ableowl.com/Courses/WebinarRecording/MyVideos.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
 {path:'/excelcourse',render: ()=>{window.location = 'http://www.ableowl.com/Courses/CoursesOverview.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
 {path:'/geniemini',render: ()=>{window.location = 'http://www.ableowl.com/Genie/Download/AddIn.aspx'; return <h1 style={{"text-align":"center"}}>Redirect.....</h1>}},
+*/
+
   { path: '*', component: NotReadyPage },
 ];
 

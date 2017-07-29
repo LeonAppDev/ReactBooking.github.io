@@ -10,8 +10,9 @@ constructor(props)
 {
   super(props);
   this.state={showError:false,
-    showSuccess:false,
-  country:'United States'}
+     showSuccess:false,
+     country:'United States',
+     loading:false}
 }
 render()
 {
@@ -21,18 +22,38 @@ render()
    (this.state.name && this.state.email)?sendMessage=true:this.setState({showError:true,errorMessage:'Please make sure name and email is not null and email address is valid'})
     if (sendMessage===true)
     {
+
    let callMe='';
    this.state.callSelect?callMe='Please Call Me.':callMe='Please do not Call Me.'
-   this.setState({showError:false});
+   this.setState({showError:false,
+                  showSuccess:false,
+                  errorMessage:'',
+                  successMessage:'',
+                  loading:true   });
+
     emailjs.send("outlook","template_EqPij2SK",{to_name:'Admin',from_name: this.state.name,email:this.state.email,
                 phone_number:'Phone Number is '+this.state.phoneNum, call_me:callMe, from_country:'From '+this.state.country,notes: this.state.message,})
-  .then(function(response) {
+  .then((response) => {
      //console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-     alert("SUCCESS.");
+     //alert("Your email has been sent. You will be contacted within 1 working day.");
+     this.setState({loading:false,
+                    showSuccess:true,
+                     successMessage:'Your email has been sent. You will be contacted within 1 working day.',
+                        name:'',
+                         email:'',
+                        phoneNum:'',
+                         callSelect:false,
+                         message:''  });
+                             console.log(response);
+
   }, function(err) {
 
-     alert("FAILED. error=" + err);
-     console.log("FAILED.");
+    /* alert("FAILED. error=" + err);
+     console.log("FAILED.");*/
+     this.setState({showError:true,
+                     loading:false,
+                     errorMessage:"FAILED. error=" + err})
+
   });}
   else {
 
@@ -79,17 +100,19 @@ const messageChange=(e)=>
   this.setState({message:e.target.value})
 
 }
+
+
   return(
     <div className={style.form}>
           <div className={style.formGroup}>
-            <input className={style.formControl} id="exampleInputEmail1" placeholder="Name" type="text" onChange={nameChange}/>
+            <input className={style.formControl} id="exampleInputEmail1" placeholder="Name" type="text" onChange={nameChange} value={this.state.name}/>
           </div>
           <div className={style.formGroup}>
-            <input className={style.formControl} id="exampleInputPassword1" placeholder="Email (Your email address will not be shared)" type="email" onChange={emailChange}/>
+            <input className={style.formControl} id="exampleInputPassword1" placeholder="Email (Your email address will not be shared)" type="email" onChange={emailChange} value={this.state.email}/>
           </div>
           <div className={style.formGroup}>
-									<input className={style.formControl} id="exampleInputphone1" placeholder="Phone" type="text" onChange={phoneChange}/>
-									<label className={style.callCheck}>Please call me</label> <input type="checkbox" onChange={callChange}/>
+									<input className={style.formControl} id="exampleInputphone1" placeholder="Phone" type="text" onChange={phoneChange} value={this.state.phoneNum}/>
+									<label className={style.callCheck}>Please call me</label> <input type="checkbox" onChange={callChange} checked={this.state.callSelect} />
 								</div>
           <select onChange={countryChange} value={this.state.country}>
 
@@ -99,7 +122,7 @@ const messageChange=(e)=>
 
           </select>
           <div className={style.formGroup}>
- 									<textarea rows="4" cols="8" placeholder="Message" onChange={messageChange}></textarea>
+ 									<textarea rows="4" cols="8" placeholder="Message" onChange={messageChange} value={this.state.message}></textarea>
  								</div>
                 <OptionallyDisplayed display={this.state.showError||this.state.showSuccess}>
                 <div>
@@ -107,7 +130,7 @@ const messageChange=(e)=>
                 </div>
                 </OptionallyDisplayed>
           <div className={style.checkBox}>
-          </div><button className={style.subBtn} type="submit" onClick={onSubmit}>SUBMIT</button>
+          </div><button className={style.subBtn} type="submit" onClick={onSubmit}>{this.state.loading?'SUBMITING...':'SUBMIT'}</button>
     </div>
 
 )

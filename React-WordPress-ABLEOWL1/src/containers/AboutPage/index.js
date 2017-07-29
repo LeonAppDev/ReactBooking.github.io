@@ -21,6 +21,7 @@ function AboutList({aboutItems}){
 }
 
 
+
 function AboutPage(){
 
   const paragraphItems=[{title:'',contents:['AbleOwl are a centre of expertise in Microsoft Excel.'],img:''},
@@ -31,7 +32,7 @@ function AboutPage(){
                       {items:['Broadest range of over <a href="/excelcourse">20 Excel courses</a>.'],img:media.homeTrainingImg},
                         {items:['ESP (Excel Standardisation Programme): A set of conventions, standard components and tools \
                         to rapidly develop Excel applications. Utilise the free <a href="/geniemini">GenieMini</a> add-in to implement that and do the <a href="/onlinecourse">free online course</a>.'],img:media.genieImg},
-                      {items:['Hotline support.'],img:media.listenerImg},
+                      {items:['<a href="/hotline">Hotline support.</a>'],img:media.listenerImg},
                   ];
 
 

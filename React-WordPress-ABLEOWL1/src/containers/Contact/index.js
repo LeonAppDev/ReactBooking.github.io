@@ -20,7 +20,7 @@ function Contact() {
 
    );
 
-  const onSubmit = (e)=>{emailjs.send("outlook","template_EqPij2SK",{from_name: "James", notes: "Check this out!"});};
+
 
   return (
     <section id={style.contentWrap}>
@@ -30,7 +30,7 @@ function Contact() {
           <div className={style.row}>
           <div className={style.colMd5}>
          {address}
-          <img src={media.listenerImg} className={style.supportImg}/>
+        <img src={media.listenerImg} className={style.supportImg}/>
           </div>
           <div className={style.colMd7}>
 

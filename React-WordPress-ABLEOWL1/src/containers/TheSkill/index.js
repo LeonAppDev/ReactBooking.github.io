@@ -22,7 +22,7 @@ function TheSkill(){
               '<b>People move on</b> and another at AbleOwl or the client company needs to continue with certain applications. That task is difficult if each developer applies their own or no conventions. \
               So, all applications developed by AbleOwl use the ESP conventions.'],img:media.exitImg},
                   {title:'',contents:['In addition to making the application easier to understand for others, <b>ESP conventions and standard components</b> enable much greater development and usage productivity.',
-                  'For more information on ESP, see the <a href="/onlinecourse" >free online course</a> and learn in detail with part 1 of <a href="/qualification" >the Certified Professional in Excel for Finance study and qualification</a>.',
+                  'For more information on ESP, see the <a href="/onlinecourseskill" >free online course</a> and learn in detail with part 1 of <a href="/qualificationskill" >the Certified Professional in Excel for Finance study and qualification</a>.',
                 'An understanding of the different functions of a business such as <b>Finance, Operations, HR, Marketing, Sales, Engineering, R&D, Production, Purchasing, Admin, IT</b> and so on helps.',
                 'After many of years of creating a wide variety of applications for different functions, we have gained an understanding of many functional areas.'],img:media.hatallImg},
                  ];
