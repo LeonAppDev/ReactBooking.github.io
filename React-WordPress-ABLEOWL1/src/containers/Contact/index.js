@@ -9,11 +9,13 @@ function Contact() {
    const address=(
      <ul className={style.address}>
 								<li><span className={style.icon}><img src={media.addressImg}/></span>
-								<span><strong>ADDRESS</strong><address><br/>100 Wilshire Blvd, Suite 700 Santa Monica, CA  90401</address></span></li>
+								<span><strong>ADDRESS</strong><address><br/>9350 Wilshire Blvd, Suite 203, Beverly Hills, CA 90212</address></span></li>
 								<li><span className={style.icon}><img src={media.phoneImg}/></span>
-									<span><strong>PHONE </strong><br/> +1 310.917.1027</span></li>
+									<span><strong>PHONE </strong><br/> +1 (213) 269-4522</span></li>
 								<li><span className={style.icon}><img src={media.emailImg}/></span>
 									<span><strong>EMAIL </strong><br/><a href="mailto:admin@ableowl.com">admin@ableowl.com</a></span></li>
+                  <li><span className={style.icon}><img src={media.faxImg}/></span>
+  									<span><strong>FAX </strong><br/>+1 (213) 269-4523</span></li>
 
 							</ul>
 

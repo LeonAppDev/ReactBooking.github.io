@@ -36316,7 +36316,7 @@ function Contact() {
           'address',
           null,
           _react2.default.createElement('br', null),
-          '100 Wilshire Blvd, Suite 700 Santa Monica, CA  90401'
+          '9350 Wilshire Blvd, Suite 203, Beverly Hills, CA 90212'
         )
       )
     ),
@@ -36337,7 +36337,7 @@ function Contact() {
           'PHONE '
         ),
         _react2.default.createElement('br', null),
-        ' +1 310.917.1027'
+        ' +1 (213) 269-4522'
       )
     ),
     _react2.default.createElement(
@@ -36362,6 +36362,26 @@ function Contact() {
           { href: 'mailto:admin@ableowl.com' },
           'admin@ableowl.com'
         )
+      )
+    ),
+    _react2.default.createElement(
+      'li',
+      null,
+      _react2.default.createElement(
+        'span',
+        { className: _style2.default.icon },
+        _react2.default.createElement('img', { src: _media2.default.faxImg })
+      ),
+      _react2.default.createElement(
+        'span',
+        null,
+        _react2.default.createElement(
+          'strong',
+          null,
+          'FAX '
+        ),
+        _react2.default.createElement('br', null),
+        '+1 (213) 269-4523'
       )
     )
   );
@@ -38834,4 +38854,4 @@ module.exports = __webpack_require__("./index.js");
 /***/ })
 
 },[1]);
-//# sourceMappingURL=app-f2f164ebbb08c4714c11.js.map
+//# sourceMappingURL=app-a64ad916fe20376858e4.js.map
