@@ -36775,7 +36775,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function HomePage() {
 
-  var items = ['With 30 years\' specialization, be assured of continuity of support and commitment.', 'We are not a freelancers portal.', 'Be confident that you engage top-level, efficient consultants.', 'Have applications built with standard components and conventions, which help with productivity, robustness and maintainability.'];
+  var items = ['With 30 years\' specialization, be assured of continuity of support and commitment.', 'We are not a freelancers portal.', 'Be confident that you engage top-level, efficient Excel expert consultants, Excel VBA programmers and developers.', 'Have applications built with standard components and conventions, which help with productivity, robustness and maintainability.'];
 
   var handleClick = function handleClick() {
     return window.scrollTo(0, 0);
@@ -38854,4 +38854,4 @@ module.exports = __webpack_require__("./index.js");
 /***/ })
 
 },[1]);
-//# sourceMappingURL=app-a64ad916fe20376858e4.js.map
+//# sourceMappingURL=app-27c5696abd9753e27595.js.map
