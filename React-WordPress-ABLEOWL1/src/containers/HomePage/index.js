@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 function HomePage() {
 
     const items=['With 30 years\' specialization, be assured of continuity of support and commitment.','We are not a freelancers portal.',
-    'Be confident that you engage top-level, efficient consultants.',
+    'Be confident that you engage top-level, efficient Excel expert consultants, Excel VBA programmers and developers.',
     'Have applications built with standard components and conventions, which help with productivity, robustness and maintainability.'];
 
     const handleClick = ()=>window.scrollTo(0, 0);
