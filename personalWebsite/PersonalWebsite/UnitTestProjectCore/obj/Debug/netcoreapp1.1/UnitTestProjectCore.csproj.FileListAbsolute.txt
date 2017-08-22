@@ -1,0 +1,14 @@
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\bin\Debug\netcoreapp1.1\UnitTestProjectCore.deps.json
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\bin\Debug\netcoreapp1.1\UnitTestProjectCore.runtimeconfig.json
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\bin\Debug\netcoreapp1.1\UnitTestProjectCore.runtimeconfig.dev.json
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\bin\Debug\netcoreapp1.1\UnitTestProjectCore.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\bin\Debug\netcoreapp1.1\UnitTestProjectCore.pdb
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\bin\Debug\netcoreapp1.1\ParcelModel.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\bin\Debug\netcoreapp1.1\ParcelModel.pdb
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\obj\Debug\netcoreapp1.1\UnitTestProjectCore.csprojResolveAssemblyReference.cache
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\obj\Debug\netcoreapp1.1\UnitTestProjectCore.AssemblyInfo.cs
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\obj\Debug\netcoreapp1.1\UnitTestProjectCore.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\UnitTestProjectCore\obj\Debug\netcoreapp1.1\UnitTestProjectCore.pdb

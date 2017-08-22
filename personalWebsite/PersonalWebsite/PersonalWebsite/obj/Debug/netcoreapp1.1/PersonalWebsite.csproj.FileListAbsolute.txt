@@ -1,0 +1,11 @@
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\bin\Debug\netcoreapp1.1\PersonalWebsite.deps.json
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\bin\Debug\netcoreapp1.1\PersonalWebsite.runtimeconfig.json
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\bin\Debug\netcoreapp1.1\PersonalWebsite.runtimeconfig.dev.json
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\bin\Debug\netcoreapp1.1\PersonalWebsite.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\obj\Debug\netcoreapp1.1\PersonalWebsite.csprojResolveAssemblyReference.cache
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\obj\Debug\netcoreapp1.1\PersonalWebsite.AssemblyInfo.cs
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\bin\Debug\netcoreapp1.1\PersonalWebsite.pdb
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\obj\Debug\netcoreapp1.1\PersonalWebsite.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\obj\Debug\netcoreapp1.1\PersonalWebsite.pdb
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\bin\Debug\netcoreapp1.1\ParcelModel.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\PersonalWebsite\bin\Debug\netcoreapp1.1\ParcelModel.pdb

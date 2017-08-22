@@ -1,0 +1,7 @@
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\ParcelModel\bin\Release\netcoreapp1.1\ParcelModel.deps.json
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\ParcelModel\bin\Release\netcoreapp1.1\ParcelModel.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\ParcelModel\bin\Release\netcoreapp1.1\ParcelModel.pdb
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\ParcelModel\obj\Release\netcoreapp1.1\ParcelModel.csprojResolveAssemblyReference.cache
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\ParcelModel\obj\Release\netcoreapp1.1\ParcelModel.AssemblyInfo.cs
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\ParcelModel\obj\Release\netcoreapp1.1\ParcelModel.dll
+C:\PrivateAppDev\AtomProject\DemoProject\personalWebsite\PersonalWebsite\ParcelModel\obj\Release\netcoreapp1.1\ParcelModel.pdb

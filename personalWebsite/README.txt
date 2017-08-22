@@ -1,30 +1,47 @@
-Identity by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Created by Leon Ren
+leon-ren.com | @liangren64@gmail.com
+Free for personal and commercial use under the GPL 3.0
+
+Main Technology Stack:
+MVVM Design
+React
+dotnet.core
+dotnetify
+SignalR
+material-ui
+nginx
+
+See a live demo on leon-ren.com or 128.199.152.91
+
+Function:
+Accept Length, Breadth, Height and Weight and output delivery cost if fit in.
+
+Pre-Request
+This project is build with Visual Studio 2017, with a 3rd party library dotnetfiy which required SignalR.
+
+To run the Front-end Project
+1 npm install
+2 webpack-dev-server
+3 Left log in dispatchState to see state sent to View Model backend.
 
 
-Just a fun little profile/card-style template I whipped up during a break between major
-projects. Minimal, responsive, and powered by Skel + Sass. Enjoy :)
+To run the entire project
+1 webpack --config
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+2 ASP.NET Core:
+PM> Install-Package DotNetify.Core -pre
+PM> Install-Package DotNetify.SignalR -pre
 
-(* = not included)
+3 Run Debug with VS2017
 
-AJ
-aj@lkn.io | @ajlkn
+To Publish to Linux server
+1 Defect exists when publishing with FTP using VS2017, no folder upload, need use vs2015
+2 Need to modify Program.cs to stop running from IIS,
 
 
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
-
-	Other:
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		CSS3 Pie (css3pie.com)
-		Respond.js (j.mp/respondjs)
-		Skel (skel.io)
+Improve
+1 Could add Promise to dotnetify
+2 Use Redux to manage state
+3 Test with Ava
+4 Set rule with ESLint
+5 Connect with DB(MongoDB on linux)
