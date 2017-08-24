@@ -19,7 +19,8 @@ a:hover, a:focus {
 	padding: 9px;
 }
 .navbar-brand img {
-  width: 38%;
+/*  width: 38%;*/
+ width:40%;
 }
 
 .nav-main {
@@ -60,7 +61,8 @@ a:hover, a:focus {
 /*********Footer CSS ************/
 
 .logo-footer > img {
-  width: 6%;
+  /*width: 6%;*/
+	width:5%;
 }
 .footer-top {
   background: #0d141b none repeat scroll 0 0;
@@ -551,6 +553,25 @@ padding: 10px;
 	.form-text-sec {
 	  width: 100%;
 }
+
+ /******* Responsive desgin added by Leon************/
+   .wide-img
+	 {
+		 width:200px;
+	 }
+
+	 .high-img
+	 {
+		 width:80px;
+		 height:100px;
+	 }
+
+	 .logo-footer > img {
+	  
+	 	width:12%;
+	 }
+
+
 }
 
 @media screen and (max-width:360px) {

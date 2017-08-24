@@ -15,6 +15,7 @@ const style={
   chcekBox:'checkbox',
   subBtn:'sub-btn',
   canBtn:'cancel-btn',
+  wideImg:'wide-img',
 
 };
 

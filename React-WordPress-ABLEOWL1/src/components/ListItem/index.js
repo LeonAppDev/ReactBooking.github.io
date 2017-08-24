@@ -7,11 +7,10 @@ function ListItem({ulStyle,items}){
 
 
    return(
-     <ul className={ulStyle}>
-     {items.map(item=><li><span><i aria-hidden="true" className={style.iStyle}></i></span>{renderHTML(item)}</li>)}
-     </ul>
+     <table>
+     {items.map(item=><tr><td style={{verticalAlign:'top'}}><span><i aria-hidden="true" className={style.iStyle}></i></span></td><td style={{paddingBottom:'10px'}}>{renderHTML(item)}</td></tr>)}
+     </table>
    );
 }
-
 
 export default ListItem;

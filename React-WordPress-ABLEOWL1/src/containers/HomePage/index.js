@@ -20,10 +20,10 @@ function HomePage() {
     <div className={style.mainSec}>
    <div className={style.hireHeading}>
     <h2>Hire a specialist Excel company</h2>
-    <p>We build custom applications in Excel/VBA macro programming and improve your existing spreadsheets.</p>
+    <p>We are Excel professionals who build custom applications in Excel/VBA macro programming and improve your existing spreadsheets.</p>
     <ListItem items={items} />
      </div>
-    <div className={style.expertImg}><img src={image.expertImg}/></div>
+    <div className={style.expertImg}><img src={image.expertImg} className={style.wideImg}/></div>
     <div className={style.textSection}>
     <p>For case studies, see the <span><Link to='casestudies' onClick={handleClick}>Case studies page.</Link></span></p>
 					<p>For the development process, see <span><Link to='theprocess' onClick={handleClick}>The Process</Link></span> page.</p>
