@@ -29,12 +29,12 @@ return(
          <Paragraph paragraphItems={paragraphItems} />
          <div className={style.hireHeading}>
            <ListItem items={items1} />
-             <div style={{marginTop:'30px',marginBottom:'60px',textAlign:'center'}} className={style.expertImg}><img src={media.excelIconImg}/></div>
+             <div style={{marginTop:'30px',marginBottom:'60px',textAlign:'center'}} className={style.expertImg}><img src={media.excelIconImg} className={style.wideImg}/></div>
              <ListItem items={items2} />
-             <div style={{marginTop:'30px',marginBottom:'60px',textAlign:'center'}} className={style.expertImg}><img src={media.lockImg}/></div>
+             <div style={{marginTop:'30px',marginBottom:'60px',textAlign:'center'}} className={style.expertImg}><img src={media.lockImg} className={style.smallerImg}/></div>
              <h4>BENEFITS OF EXCEL SOLUTIONS ARE MANY</h4>
              <ListItem items={items3}/>
-             <div style={{marginTop:'30px',marginBottom:'60px',textAlign:'center'}} className={style.expertImg}><img src={media.graphImg}/></div>
+             <div style={{marginTop:'30px',marginBottom:'60px',textAlign:'center'}} className={style.expertImg}><img src={media.graphImg} className={style.wideImg}/></div>
            </div>
       </div>
    </div>

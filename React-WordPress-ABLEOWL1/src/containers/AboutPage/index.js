@@ -9,13 +9,15 @@ import renderHTML from 'react-render-html';
 
 function AboutList({aboutItems}){
 
+
+
   return(
 
    <div className={style.hireHeading}>
 
    {aboutItems.map(aboutItem=><div>{
-    <ul>{aboutItem.items.map(item=><li><span><i aria-hidden="true" className={style.iStyle}></i></span>{renderHTML(item)}</li>)}
-    </ul>}<div style={{marginTop:'30px',marginBottom:'60px',textAlign:'center'}}><img src={aboutItem.img}/></div></div>)}
+    <table>{aboutItem.items.map(item=><tr><td style={{verticalAlign:'top'}}><span><i aria-hidden="true" className={style.iStyle}></i></span></td><td>{renderHTML(item)}</td></tr>)}
+    </table>}<div style={{marginTop:'30px',marginBottom:'60px',textAlign:'center'}}><img src={aboutItem.img}/></div></div>)}
    </div>
   )
 }

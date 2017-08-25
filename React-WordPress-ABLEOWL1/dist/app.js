@@ -33777,7 +33777,8 @@ var style = {
    footerBot: 'footer-bottom',
    homePage: 'www.ableowl.com',
    logoStyle: 'navbar-brand',
-   logoUrl: 'http://test.nzpuretour.com/wp-content/uploads/2017/07/logo-footer.png',
+   // logoUrl : 'http://test.nzpuretour.com/wp-content/uploads/2017/07/logo-footer.png',
+   logoUrl: 'http://test.nzpuretour.com/wp-content/uploads/2017/07/Able-Owl-Logo-Alt.png',
    logAlt: 'Logo',
    contentWrap: 'content-wrapper'
 };
@@ -33830,18 +33831,26 @@ function ListItem(_ref) {
 
 
   return _react2.default.createElement(
-    'ul',
-    { className: ulStyle },
+    'table',
+    null,
     items.map(function (item) {
       return _react2.default.createElement(
-        'li',
+        'tr',
         null,
         _react2.default.createElement(
-          'span',
-          null,
-          _react2.default.createElement('i', { 'aria-hidden': 'true', className: _style2.default.iStyle })
+          'td',
+          { style: { verticalAlign: 'top' } },
+          _react2.default.createElement(
+            'span',
+            null,
+            _react2.default.createElement('i', { 'aria-hidden': 'true', className: _style2.default.iStyle })
+          )
         ),
-        (0, _reactRenderHtml2.default)(item)
+        _react2.default.createElement(
+          'td',
+          { style: { paddingBottom: '10px' } },
+          (0, _reactRenderHtml2.default)(item)
+        )
       );
     })
   );
@@ -36798,14 +36807,14 @@ function HomePage() {
         _react2.default.createElement(
           'p',
           null,
-          'We build custom applications in Excel/VBA macro programming and improve your existing spreadsheets.'
+          'We are Excel professionals who build custom applications in Excel/VBA macro programming and improve your existing spreadsheets.'
         ),
         _react2.default.createElement(_ListItem2.default, { items: items })
       ),
       _react2.default.createElement(
         'div',
         { className: _style2.default.expertImg },
-        _react2.default.createElement('img', { src: _image2.default.expertImg })
+        _react2.default.createElement('img', { src: _image2.default.expertImg, className: _style2.default.wideImg })
       ),
       _react2.default.createElement(
         'div',
@@ -36939,7 +36948,8 @@ var style = {
   formControl: 'form-control',
   chcekBox: 'checkbox',
   subBtn: 'sub-btn',
-  canBtn: 'cancel-btn'
+  canBtn: 'cancel-btn',
+  wideImg: 'wide-img'
 
 };
 
@@ -38854,4 +38864,4 @@ module.exports = __webpack_require__("./index.js");
 /***/ })
 
 },[1]);
-//# sourceMappingURL=app-27c5696abd9753e27595.js.map
+//# sourceMappingURL=app-cabae6be1c322b8bb27e.js.map

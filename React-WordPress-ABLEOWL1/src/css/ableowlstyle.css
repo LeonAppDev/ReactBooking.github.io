@@ -557,19 +557,62 @@ padding: 10px;
  /******* Responsive desgin added by Leon************/
    .wide-img
 	 {
-		 width:200px;
+		 width:180px;
 	 }
 
 	 .high-img
 	 {
+		 width:100px;
+
+	 }
+
+	 .smaller-img
+	 {
 		 width:80px;
-		 height:100px;
 	 }
 
 	 .logo-footer > img {
-	  
+
 	 	width:12%;
 	 }
+
+	.process h1 {
+		font-size: 29px;
+		letter-spacing: 1px;
+		line-height:35px;
+ 	}
+
+	.process
+	{
+		width:90%;
+	}
+
+	.col-md-3 .img-owl{
+
+		   width:100px;
+	}
+
+	.journal .sub-btn {
+	  background: #9aafd3 none repeat scroll 0 0;
+	  border: medium none;
+	  color: #fff;
+	  letter-spacing: 2px;
+		padding:10px 55px 10px 55px;
+
+		margin-bottom: 20px;
+	}
+	.journal .cancel-btn {
+	  background: #b1b8c5;
+	  border: medium none;
+	  color: #fff;
+		letter-spacing: 0px;
+		padding:10px 5px 10px 5px;
+	}
+
+	img.support-img
+	{
+		width:80px;
+	}
 
 
 }

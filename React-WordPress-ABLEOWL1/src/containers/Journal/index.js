@@ -92,7 +92,7 @@ return(
    <div className={style.greyHire}>
          <div className={style.mainSec}>
            <div className={style.rowTesti}>
-           	<div className={style.colMd3}><img src={media.owlJournalImg} alt="img" className={style.imgOwl}/></div>
+           	<div className={style.colMd3} style={{textAlign:'center'}}><img src={media.owlJournalImg} alt="img" className={style.imgOwl}/></div>
             <Testimonials testimonialItems={testimonialItems} />
            </div>
 
